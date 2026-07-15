@@ -61,6 +61,12 @@ export default function Footer() {
               Proudly serving Palm Beach County, Broward County, and
               Miami-Dade County.
             </p>
+            <Link
+              href="/service-areas"
+              className="mt-2 inline-block text-sm text-brand hover:text-white"
+            >
+              View All Cities We Serve
+            </Link>
           </div>
         </div>
 

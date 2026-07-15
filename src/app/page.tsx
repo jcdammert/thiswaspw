@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { services, testimonials, cities, phoneDisplay, phoneHref } from "@/lib/data";
+import { services, testimonials, serviceAreas, phoneDisplay, phoneHref } from "@/lib/data";
 
 const whyPickUs = [
   {
@@ -233,13 +233,14 @@ export default function Home() {
             </p>
           </div>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
-            {cities.map((city) => (
-              <span
-                key={city}
-                className="rounded-full border border-navy/10 px-4 py-2 text-sm text-navy/70"
+            {serviceAreas.map((area) => (
+              <Link
+                key={area.slug}
+                href={`/service-areas/${area.slug}`}
+                className="rounded-full border border-navy/10 px-4 py-2 text-sm text-navy/70 transition-colors hover:border-brand/40 hover:text-brand"
               >
-                {city}
-              </span>
+                {area.name}
+              </Link>
             ))}
           </div>
         </div>

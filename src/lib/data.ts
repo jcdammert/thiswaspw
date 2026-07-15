@@ -120,6 +120,49 @@ export const services: Service[] = [
   },
 ];
 
+export type ServiceArea = {
+  name: string;
+  slug: string;
+  county: "Broward County" | "Miami-Dade County" | "Palm Beach County";
+};
+
+export function citySlug(city: string): string {
+  return city
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
+const cityCounty: Record<string, ServiceArea["county"]> = {
+  Weston: "Broward County",
+  Davie: "Broward County",
+  Plantation: "Broward County",
+  Sunrise: "Broward County",
+  "Pembroke Pines": "Broward County",
+  Miramar: "Broward County",
+  "Southwest Ranches": "Broward County",
+  "Cooper City": "Broward County",
+  "Coral Springs": "Broward County",
+  Parkland: "Broward County",
+  Tamarac: "Broward County",
+  Lauderhill: "Broward County",
+  "Fort Lauderdale": "Broward County",
+  Hollywood: "Broward County",
+  "Coconut Creek": "Broward County",
+  Miami: "Miami-Dade County",
+  "Miami Lakes": "Miami-Dade County",
+  "Miami Gardens": "Miami-Dade County",
+  Hialeah: "Miami-Dade County",
+  Doral: "Miami-Dade County",
+  Homestead: "Miami-Dade County",
+  Kendall: "Miami-Dade County",
+  "Boca Raton": "Palm Beach County",
+  "Delray Beach": "Palm Beach County",
+  "Boynton Beach": "Palm Beach County",
+  Wellington: "Palm Beach County",
+  "West Palm Beach": "Palm Beach County",
+};
+
 export const cities = [
   "Weston",
   "Davie",
@@ -149,6 +192,12 @@ export const cities = [
   "Wellington",
   "West Palm Beach",
 ];
+
+export const serviceAreas: ServiceArea[] = cities.map((name) => ({
+  name,
+  slug: citySlug(name),
+  county: cityCounty[name],
+}));
 
 export type Testimonial = {
   quote: string;
