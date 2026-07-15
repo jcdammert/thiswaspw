@@ -1,0 +1,275 @@
+import Image from "next/image";
+import Link from "next/link";
+import { services, testimonials, cities, phoneDisplay, phoneHref } from "@/lib/data";
+
+const whyPickUs = [
+  {
+    title: "Satisfaction Guarantee",
+    description:
+      "We do a full walk-through when we finish. We make sure you are completely happy before we leave.",
+  },
+  {
+    title: "Focus on Quality",
+    description:
+      "We pay attention to the details that others miss. We do the job right the first time.",
+  },
+  {
+    title: "Safe Cleaning Products",
+    description:
+      "We use safe soaps that break down naturally. Your plants and pets are safe with us.",
+  },
+];
+
+const steps = [
+  {
+    number: "1",
+    title: "Request a Quote",
+    description: "Call us or fill out our online form. We will give you a fast and honest price.",
+  },
+  {
+    number: "2",
+    title: "Schedule Service",
+    description: "Pick a day that works for you. We show up on time and ready to work.",
+  },
+  {
+    number: "3",
+    title: "Enjoy the Results",
+    description: "We clean your property and do a final walk-through. You get to enjoy a fresh and clean home.",
+  },
+];
+
+const stats = [
+  { value: "3000+", label: "Jobs Completed" },
+  { value: "12+", label: "Years in Business" },
+  { value: "5.0", label: "Average Rating" },
+];
+
+export default function Home() {
+  return (
+    <>
+      {/* Hero */}
+      <section className="bg-navy text-white">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 py-20 lg:grid-cols-2 lg:px-8">
+          <div>
+            <span className="inline-block rounded-full bg-white/10 px-4 py-1 text-xs font-semibold tracking-wide text-white/90">
+              RATED 5.0 IN SOUTH FLORIDA
+            </span>
+            <h1 className="mt-6 text-4xl font-bold leading-tight sm:text-5xl">
+              Restore Your Property&apos;s Clean Condition.
+            </h1>
+            <p className="mt-6 max-w-xl text-white/70">
+              Premium pressure washing and soft washing. We protect your
+              investment with precision, care, and guaranteed satisfaction.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                href="/contact"
+                className="rounded-full bg-brand px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand/90"
+              >
+                Get a Quote
+              </Link>
+              <a
+                href={phoneHref}
+                className="rounded-full border border-white/30 px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+              >
+                Call Now
+              </a>
+            </div>
+          </div>
+          <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
+            <Image
+              src="/images/hero.png"
+              alt="Professional pressure washing"
+              fill
+              priority
+              className="object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Stats */}
+      <section className="bg-navy text-white">
+        <div className="mx-auto grid max-w-7xl grid-cols-3 gap-6 border-t border-white/10 px-6 py-10 text-center lg:px-8">
+          {stats.map((stat) => (
+            <div key={stat.label}>
+              <p className="text-3xl font-bold sm:text-4xl">{stat.value}</p>
+              <p className="mt-1 text-xs uppercase tracking-wide text-white/60 sm:text-sm">
+                {stat.label}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Services */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-bold text-navy sm:text-4xl">
+              Services We Offer
+            </h2>
+            <p className="mt-4 text-navy/60">
+              We clean all exterior surfaces safely and effectively. We
+              handle everything from dirty driveways to delicate roofs.
+            </p>
+          </div>
+          <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {services.map((service) => (
+              <div
+                key={service.slug}
+                className="overflow-hidden rounded-2xl border border-navy/10 shadow-sm"
+              >
+                <div className="relative aspect-[16/10]">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold text-navy">
+                    {service.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-navy/60">
+                    {service.description}
+                  </p>
+                  <Link
+                    href="/services"
+                    className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand"
+                  >
+                    Learn More <span aria-hidden>→</span>
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Pick Finesse */}
+      <section className="bg-navy text-white">
+        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-bold sm:text-4xl">Why Pick Finesse</h2>
+            <p className="mt-4 text-white/60">
+              We take pride in our work. We protect your property and make
+              sure you are happy with the results.
+            </p>
+          </div>
+          <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-3">
+            {whyPickUs.map((item) => (
+              <div key={item.title} className="rounded-2xl bg-white/5 p-8">
+                <h3 className="text-lg font-bold">{item.title}</h3>
+                <p className="mt-2 text-sm text-white/60">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-bold text-navy sm:text-4xl">
+              How It Works
+            </h2>
+          </div>
+          <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-3">
+            {steps.map((step) => (
+              <div key={step.number} className="text-center">
+                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand text-lg font-bold text-white">
+                  {step.number}
+                </div>
+                <h3 className="mt-4 text-lg font-bold text-navy">
+                  {step.title}
+                </h3>
+                <p className="mt-2 text-sm text-navy/60">{step.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="bg-navy/5">
+        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-bold text-navy sm:text-4xl">
+              What Our Customers Say
+            </h2>
+            <p className="mt-4 text-navy/60">
+              Read what your neighbors think about our work.
+            </p>
+          </div>
+          <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-3">
+            {testimonials.slice(0, 3).map((t) => (
+              <div
+                key={t.name}
+                className="rounded-2xl bg-white p-8 shadow-sm"
+              >
+                <p className="text-sm text-navy/70">&ldquo;{t.quote}&rdquo;</p>
+                <p className="mt-4 font-bold text-navy">{t.name}</p>
+                <p className="text-sm text-navy/50">{t.city}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Where We Work */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-bold text-navy sm:text-4xl">
+              Where We Work
+            </h2>
+            <p className="mt-4 text-navy/60">
+              We serve Palm Beach, Broward, and Miami-Dade counties.
+            </p>
+          </div>
+          <div className="mt-10 flex flex-wrap justify-center gap-3">
+            {cities.map((city) => (
+              <span
+                key={city}
+                className="rounded-full border border-navy/10 px-4 py-2 text-sm text-navy/70"
+              >
+                {city}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-brand text-white">
+        <div className="mx-auto max-w-7xl px-6 py-16 text-center lg:px-8">
+          <h2 className="text-3xl font-bold sm:text-4xl">
+            Ready to Get Started?
+          </h2>
+          <p className="mt-4 text-white/80">
+            Contact us today for a free quote. We are ready to help.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <Link
+              href="/contact"
+              className="rounded-full bg-white px-8 py-3 text-sm font-semibold text-brand transition-colors hover:bg-white/90"
+            >
+              Get a Quote
+            </Link>
+            <a
+              href={phoneHref}
+              className="rounded-full border border-white/40 px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+            >
+              {phoneDisplay}
+            </a>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
