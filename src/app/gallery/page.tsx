@@ -48,9 +48,10 @@ export default function GalleryPage() {
               >
                 <Image
                   src={img.src}
-                  alt={img.label}
+                  alt={img.alt}
                   fill
                   className="object-cover"
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                 />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy/80 to-transparent p-4">
                   <p className="text-sm font-semibold text-white">
