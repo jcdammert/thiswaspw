@@ -74,7 +74,7 @@ export const services: Service[] = [
     title: "Rust Removal & Acid Wash",
     description:
       "We remove rust stains from concrete, driveways, and walls. Acid washing for pool surfaces and hard stains.",
-    image: "/images/gallery/paver-sealing-sanding-01.jpg",
+    image: "/images/gallery/house-washing-01.jpg",
   },
   {
     slug: "oil-stain-removal",
@@ -309,7 +309,7 @@ export type GalleryImage = {
 };
 
 export const galleryImages: GalleryImage[] = [
-  { src: "/images/gallery/house-washing-01.jpg", label: "House Washing", alt: "Stucco wall before pressure washing showing algae and mildew stains — Finesse Cleaning, South Florida" },
+  { src: "/images/gallery/house-washing-01.jpg", label: "Rust Removal & Acid Wash", alt: "Rust stain running down a stucco wall from a downspout before treatment — Finesse Cleaning, South Florida" },
   { src: "/images/gallery/house-washing-02.jpg", label: "House Washing", alt: "Stucco wall after pressure washing with a clean white finish — Finesse Cleaning, South Florida" },
   { src: "/images/gallery/roof-soft-washing-01.jpg", label: "Roof Soft Washing", alt: "Clean terracotta tile roof after soft washing — Finesse Cleaning, South Florida" },
   { src: "/images/gallery/roof-soft-washing-02.jpg", label: "Roof Soft Washing", alt: "Flat coated roof after soft washing near a pool — Finesse Cleaning, South Florida" },
@@ -406,6 +406,7 @@ export const galleryFilters = [
   "Pool Deck Cleaning",
   "House Washing",
   "Sidewalk Cleaning",
+  "Rust Removal & Acid Wash",
 ];
 
 export const phoneDisplay = "(877) 346-3773";
