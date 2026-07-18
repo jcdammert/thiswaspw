@@ -60,7 +60,7 @@ export const services: Service[] = [
     title: "Window Cleaning",
     description:
       "We clean your windows inside and out. Streak-free results that let the sunshine in.",
-    image: "/images/window-cleaning.png",
+    image: "/images/gallery/window-cleaning-01.jpg",
   },
   {
     slug: "fence-cleaning",
@@ -309,6 +309,7 @@ export type GalleryImage = {
 };
 
 export const galleryImages: GalleryImage[] = [
+  { src: "/images/gallery/window-cleaning-01.jpg", label: "Window Cleaning", alt: "Close-up of a squeegee clearing soap from a window — Finesse Cleaning, South Florida" },
   { src: "/images/gallery/screen-enclosure-cleaning-01.jpg", label: "Screen Enclosure Cleaning", alt: "Crew pressure washing a pool cage screen enclosure — Finesse Cleaning, South Florida" },
   { src: "/images/gallery/deck-cleaning-01.jpg", label: "Deck Cleaning", alt: "Crew pressure washing a waterfront wood dock next to a tiki hut — Finesse Cleaning, South Florida" },
   { src: "/images/gallery/house-washing-06.jpg", label: "House Washing", alt: "Crew washing an exterior wall with an extension pole beside a pool — Finesse Cleaning, South Florida" },
@@ -403,6 +404,7 @@ export const galleryImages: GalleryImage[] = [
 export const galleryFilters = [
   "All Work",
   "Deck Cleaning",
+  "Window Cleaning",
   "Screen Enclosure Cleaning",
   "Roof Soft Washing",
   "Commercial Services",
