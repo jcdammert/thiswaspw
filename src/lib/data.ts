@@ -11,7 +11,7 @@ export const services: Service[] = [
     title: "Roof Soft Washing",
     description:
       "We safely remove algae and black streaks without high pressure. This protects your shingles and helps your roof last longer.",
-    image: "/images/gallery/roof-soft-washing-04.jpg",
+    image: "/images/gallery/roof-soft-washing-10.jpg",
   },
   {
     slug: "deck-cleaning",
