@@ -18,7 +18,7 @@ export const services: Service[] = [
     title: "Deck Cleaning",
     description:
       "We strip away dirt and grime from your wood or composite deck. This gets it ready for a fresh seal or stain.",
-    image: "/images/deck-cleaning.jpg",
+    image: "/images/gallery/deck-cleaning-01.jpg",
   },
   {
     slug: "paver-sealing-sanding",
@@ -309,6 +309,7 @@ export type GalleryImage = {
 };
 
 export const galleryImages: GalleryImage[] = [
+  { src: "/images/gallery/deck-cleaning-01.jpg", label: "Deck Cleaning", alt: "Crew pressure washing a waterfront wood dock next to a tiki hut — Finesse Cleaning, South Florida" },
   { src: "/images/gallery/house-washing-01.jpg", label: "Rust Removal & Acid Wash", alt: "Rust stain running down a stucco wall from a downspout before treatment — Finesse Cleaning, South Florida" },
   { src: "/images/gallery/house-washing-02.jpg", label: "House Washing", alt: "Stucco wall after pressure washing with a clean white finish — Finesse Cleaning, South Florida" },
   { src: "/images/gallery/roof-soft-washing-01.jpg", label: "Roof Soft Washing", alt: "Clean terracotta tile roof after soft washing — Finesse Cleaning, South Florida" },
@@ -399,6 +400,7 @@ export const galleryImages: GalleryImage[] = [
 
 export const galleryFilters = [
   "All Work",
+  "Deck Cleaning",
   "Roof Soft Washing",
   "Commercial Services",
   "Paver Sealing & Sanding",
