@@ -88,7 +88,7 @@ export const services: Service[] = [
     title: "Painting Services",
     description:
       "Full service interior and exterior painting. We handle prep, prime, and finish for homes and businesses.",
-    image: "/images/gallery/paver-sealing-sanding-06.jpg",
+    image: "/images/gallery/commercial-services-20.jpg",
   },
   {
     slug: "sidewalk-cleaning",
