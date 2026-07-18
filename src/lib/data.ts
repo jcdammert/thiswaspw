@@ -53,7 +53,7 @@ export const services: Service[] = [
     title: "House Washing",
     description:
       "We wash the full exterior of your home. This removes dirt and mildew from your siding and stucco.",
-    image: "/images/gallery/house-washing-04.jpg",
+    image: "/images/gallery/house-washing-06.jpg",
   },
   {
     slug: "window-cleaning",
