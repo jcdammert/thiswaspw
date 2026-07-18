@@ -102,7 +102,7 @@ export const services: Service[] = [
     title: "Screen Enclosure Cleaning",
     description:
       "We clean pool cages and lanai screens. We remove algae, mold, dirt, and oxidation from frames and screens.",
-    image: "/images/roof-soft-washing.jpg",
+    image: "/images/gallery/screen-enclosure-cleaning-01.jpg",
   },
   {
     slug: "gutter-cleaning-flush",
@@ -309,6 +309,7 @@ export type GalleryImage = {
 };
 
 export const galleryImages: GalleryImage[] = [
+  { src: "/images/gallery/screen-enclosure-cleaning-01.jpg", label: "Screen Enclosure Cleaning", alt: "Crew pressure washing a pool cage screen enclosure — Finesse Cleaning, South Florida" },
   { src: "/images/gallery/deck-cleaning-01.jpg", label: "Deck Cleaning", alt: "Crew pressure washing a waterfront wood dock next to a tiki hut — Finesse Cleaning, South Florida" },
   { src: "/images/gallery/house-washing-06.jpg", label: "House Washing", alt: "Crew washing an exterior wall with an extension pole beside a pool — Finesse Cleaning, South Florida" },
   { src: "/images/gallery/house-washing-01.jpg", label: "Rust Removal & Acid Wash", alt: "Rust stain running down a stucco wall from a downspout before treatment — Finesse Cleaning, South Florida" },
@@ -402,6 +403,7 @@ export const galleryImages: GalleryImage[] = [
 export const galleryFilters = [
   "All Work",
   "Deck Cleaning",
+  "Screen Enclosure Cleaning",
   "Roof Soft Washing",
   "Commercial Services",
   "Paver Sealing & Sanding",
