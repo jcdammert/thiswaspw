@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
+import TestimonialCard from "@/components/TestimonialCard";
+import GoogleReviewBadge from "@/components/GoogleReviewBadge";
 import { testimonials } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -23,31 +25,35 @@ export default function ReviewsPage() {
         subtitle="Read what property owners across South Florida think about our work."
       />
 
-      <section className="bg-white">
-        <div className="mx-auto grid max-w-7xl grid-cols-3 gap-6 px-6 pt-16 text-center lg:px-8">
+      <div className="relative z-10 -mt-10 px-6 lg:px-8">
+        <div className="mx-auto flex max-w-4xl flex-col divide-y divide-navy/10 rounded-3xl bg-white shadow-soft-lg sm:flex-row sm:divide-x sm:divide-y-0">
           {stats.map((stat) => (
-            <div key={stat.label}>
-              <p className="text-3xl font-bold text-navy sm:text-4xl">
+            <div key={stat.label} className="flex-1 px-8 py-6 text-center">
+              <p className="font-serif text-3xl font-semibold text-navy sm:text-4xl">
                 {stat.value}
               </p>
-              <p className="mt-1 text-xs uppercase tracking-wide text-navy/50 sm:text-sm">
+              <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-navy/50 sm:text-sm">
                 {stat.label}
               </p>
             </div>
           ))}
         </div>
+        <div className="mx-auto mt-6 flex max-w-4xl justify-center">
+          <GoogleReviewBadge />
+        </div>
+      </div>
 
-        <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-6 pb-20 pt-16 lg:px-8">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {testimonials.map((t) => (
-              <div
+              <TestimonialCard
                 key={t.name}
-                className="rounded-2xl border border-navy/10 p-8 shadow-sm"
-              >
-                <p className="text-sm text-navy/70">&ldquo;{t.quote}&rdquo;</p>
-                <p className="mt-4 font-bold text-navy">{t.name}</p>
-                <p className="text-sm text-navy/50">{t.city}</p>
-              </div>
+                quote={t.quote}
+                name={t.name}
+                city={t.city}
+                bordered
+              />
             ))}
           </div>
         </div>
@@ -55,7 +61,7 @@ export default function ReviewsPage() {
 
       <section className="bg-navy text-white">
         <div className="mx-auto max-w-7xl px-6 py-16 text-center lg:px-8">
-          <h2 className="text-3xl font-bold sm:text-4xl">
+          <h2 className="font-serif text-3xl font-semibold sm:text-4xl">
             Have We Worked Together?
           </h2>
           <p className="mt-4 text-white/70">
@@ -75,7 +81,7 @@ export default function ReviewsPage() {
 
       <section className="bg-brand text-white">
         <div className="mx-auto max-w-7xl px-6 py-16 text-center lg:px-8">
-          <h2 className="text-3xl font-bold sm:text-4xl">
+          <h2 className="font-serif text-3xl font-semibold sm:text-4xl">
             Ready to Be Our Next Success Story?
           </h2>
           <Link

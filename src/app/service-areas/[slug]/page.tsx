@@ -3,7 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import PageHero from "@/components/PageHero";
-import { ShieldCheckIcon, TargetIcon, LeafIcon } from "@/components/icons";
+import WhyPickFinesse from "@/components/WhyPickFinesse";
+import TestimonialCard from "@/components/TestimonialCard";
 import {
   serviceAreas,
   services,
@@ -12,8 +13,6 @@ import {
   phoneHref,
   cityContent,
 } from "@/lib/data";
-
-const whyPickIcons = [ShieldCheckIcon, TargetIcon, LeafIcon];
 
 const whyPickUs = [
   {
@@ -80,7 +79,7 @@ export default async function ServiceAreaPage({
       <section className="bg-white">
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 py-20 lg:grid-cols-2 lg:px-8">
           <div>
-            <h2 className="text-2xl font-bold text-navy sm:text-3xl">
+            <h2 className="font-serif text-2xl font-semibold text-navy sm:text-3xl">
               {area.name}&apos;s Trusted Pressure Washing Team
             </h2>
             <p className="mt-4 text-navy/60">
@@ -122,7 +121,7 @@ export default async function ServiceAreaPage({
       <section className="bg-navy/5">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold text-navy sm:text-4xl">
+            <h2 className="font-serif text-3xl font-semibold text-navy sm:text-4xl">
               Services Available in {area.name}
             </h2>
           </div>
@@ -131,18 +130,18 @@ export default async function ServiceAreaPage({
               <Link
                 key={service.slug}
                 href={`/services/${service.slug}`}
-                className="overflow-hidden rounded-2xl border border-navy/10 bg-white shadow-sm"
+                className="group overflow-hidden rounded-2xl border border-navy/10 bg-white shadow-soft transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-soft-lg"
               >
-                <div className="relative aspect-[16/10]">
+                <div className="relative aspect-[16/10] overflow-hidden">
                   <Image
                     src={service.image}
                     alt={`${service.title} in ${area.name}, FL`}
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-300 ease-out group-hover:scale-105"
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-lg font-bold text-navy">
+                  <h3 className="font-serif text-lg font-semibold text-navy">
                     {service.title}
                   </h3>
                   <p className="mt-2 text-sm text-navy/60">
@@ -155,47 +154,24 @@ export default async function ServiceAreaPage({
         </div>
       </section>
 
-      <section className="bg-navy text-white">
-        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold sm:text-4xl">Why Pick Finesse</h2>
-          </div>
-          <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-3">
-            {whyPickUs.map((item, i) => {
-              const Icon = whyPickIcons[i];
-              return (
-                <div key={item.title} className="rounded-2xl bg-white/5 p-8">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand/20 text-brand">
-                    <Icon className="h-6 w-6" />
-                  </span>
-                  <h3 className="mt-4 text-lg font-bold">{item.title}</h3>
-                  <p className="mt-2 text-sm text-white/60">
-                    {item.description}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <WhyPickFinesse items={whyPickUs} />
 
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold text-navy sm:text-4xl">
+            <h2 className="font-serif text-3xl font-semibold text-navy sm:text-4xl">
               What {area.name} Customers Say
             </h2>
           </div>
           <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-3">
             {testimonials.slice(0, 3).map((t) => (
-              <div
+              <TestimonialCard
                 key={t.name}
-                className="rounded-2xl border border-navy/10 p-8 shadow-sm"
-              >
-                <p className="text-sm text-navy/70">&ldquo;{t.quote}&rdquo;</p>
-                <p className="mt-4 font-bold text-navy">{t.name}</p>
-                <p className="text-sm text-navy/50">{t.city}</p>
-              </div>
+                quote={t.quote}
+                name={t.name}
+                city={t.city}
+                bordered
+              />
             ))}
           </div>
         </div>
@@ -204,7 +180,7 @@ export default async function ServiceAreaPage({
       {nearby.length > 0 && (
         <section className="bg-navy/5">
           <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-            <h2 className="text-center text-2xl font-bold text-navy">
+            <h2 className="text-center font-serif text-2xl font-semibold text-navy">
               Also Serving Nearby in {area.county}
             </h2>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
@@ -224,7 +200,7 @@ export default async function ServiceAreaPage({
 
       <section className="bg-brand text-white">
         <div className="mx-auto max-w-7xl px-6 py-16 text-center lg:px-8">
-          <h2 className="text-3xl font-bold sm:text-4xl">
+          <h2 className="font-serif text-3xl font-semibold sm:text-4xl">
             Ready to Get Started in {area.name}?
           </h2>
           <p className="mt-4 text-white/80">

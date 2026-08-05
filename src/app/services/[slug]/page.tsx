@@ -3,7 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import PageHero from "@/components/PageHero";
-import { ServiceIcon, ShieldCheckIcon, TargetIcon, LeafIcon } from "@/components/icons";
+import { ServiceIcon } from "@/components/icons";
+import WhyPickFinesse from "@/components/WhyPickFinesse";
 import { services, serviceDetails, phoneDisplay, phoneHref } from "@/lib/data";
 
 type Params = { slug: string };
@@ -184,45 +185,25 @@ export default async function ServiceDetailPage({
         </>
       )}
 
-      <section className="bg-navy text-white">
-        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold sm:text-4xl">Why Pick Finesse</h2>
-          </div>
-          <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-3">
-            <div className="rounded-2xl bg-white/5 p-8">
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand/20 text-brand">
-                <ShieldCheckIcon className="h-6 w-6" />
-              </span>
-              <h3 className="mt-4 text-lg font-bold">Satisfaction Guarantee</h3>
-              <p className="mt-2 text-sm text-white/60">
-                We do a full walk-through when we finish. We make sure you
-                are completely happy before we leave.
-              </p>
-            </div>
-            <div className="rounded-2xl bg-white/5 p-8">
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand/20 text-brand">
-                <TargetIcon className="h-6 w-6" />
-              </span>
-              <h3 className="mt-4 text-lg font-bold">Focus on Quality</h3>
-              <p className="mt-2 text-sm text-white/60">
-                We pay attention to the details that others miss. We do the
-                job right the first time.
-              </p>
-            </div>
-            <div className="rounded-2xl bg-white/5 p-8">
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand/20 text-brand">
-                <LeafIcon className="h-6 w-6" />
-              </span>
-              <h3 className="mt-4 text-lg font-bold">Safe Cleaning Products</h3>
-              <p className="mt-2 text-sm text-white/60">
-                We use safe soaps that break down naturally. Your plants and
-                pets are safe with us.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <WhyPickFinesse
+        items={[
+          {
+            title: "Satisfaction Guarantee",
+            description:
+              "We do a full walk-through when we finish. We make sure you are completely happy before we leave.",
+          },
+          {
+            title: "Focus on Quality",
+            description:
+              "We pay attention to the details that others miss. We do the job right the first time.",
+          },
+          {
+            title: "Safe Cleaning Products",
+            description:
+              "We use safe soaps that break down naturally. Your plants and pets are safe with us.",
+          },
+        ]}
+      />
 
       {otherServices.length > 0 && (
         <section className="relative overflow-hidden bg-navy/5">

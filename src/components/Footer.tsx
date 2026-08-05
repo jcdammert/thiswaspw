@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <p className="text-lg font-bold">Finesse Cleaning</p>
+            <p className="font-serif text-xl font-semibold">Finesse Cleaning</p>
             <p className="mt-4 text-sm text-white/70">
               Premium pressure washing and soft washing services. Punctuality,
               careful protection, and satisfaction guaranteed.

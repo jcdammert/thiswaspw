@@ -8,6 +8,9 @@
 @theme inline {
   --color-navy: var(--color-navy);
   --color-brand: var(--color-brand);
+  --font-serif: var(--font-serif);
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.04);
+  --shadow-soft-lg: 0 20px 45px rgba(0, 0, 0, 0.08);
 }
 
 body {

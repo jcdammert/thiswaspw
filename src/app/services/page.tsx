@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
-import { ShieldCheckIcon, TargetIcon, LeafIcon } from "@/components/icons";
+import WhyPickFinesse from "@/components/WhyPickFinesse";
 import { services } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -10,8 +10,6 @@ export const metadata: Metadata = {
   description:
     "We clean all exterior surfaces safely and effectively. We handle everything from dirty driveways to delicate roofs.",
 };
-
-const whyPickIcons = [ShieldCheckIcon, TargetIcon, LeafIcon];
 
 const whyPickUs = [
   {
@@ -44,18 +42,18 @@ export default function ServicesPage() {
             {services.map((service) => (
               <div
                 key={service.slug}
-                className="overflow-hidden rounded-2xl border border-navy/10 shadow-sm"
+                className="group overflow-hidden rounded-2xl border border-navy/10 bg-white shadow-soft transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-soft-lg"
               >
-                <div className="relative aspect-[16/10]">
+                <div className="relative aspect-[16/10] overflow-hidden">
                   <Image
                     src={service.image}
                     alt={service.title}
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-300 ease-out group-hover:scale-105"
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-lg font-bold text-navy">
+                  <h3 className="font-serif text-lg font-semibold text-navy">
                     {service.title}
                   </h3>
                   <p className="mt-2 text-sm text-navy/60">
@@ -74,33 +72,11 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="bg-navy text-white">
-        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold sm:text-4xl">Why Pick Finesse</h2>
-          </div>
-          <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-3">
-            {whyPickUs.map((item, i) => {
-              const Icon = whyPickIcons[i];
-              return (
-                <div key={item.title} className="rounded-2xl bg-white/5 p-8">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand/20 text-brand">
-                    <Icon className="h-6 w-6" />
-                  </span>
-                  <h3 className="mt-4 text-lg font-bold">{item.title}</h3>
-                  <p className="mt-2 text-sm text-white/60">
-                    {item.description}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <WhyPickFinesse items={whyPickUs} />
 
       <section className="bg-brand text-white">
         <div className="mx-auto max-w-7xl px-6 py-16 text-center lg:px-8">
-          <h2 className="text-3xl font-bold sm:text-4xl">
+          <h2 className="font-serif text-3xl font-semibold sm:text-4xl">
             Ready to Get Started?
           </h2>
           <Link
