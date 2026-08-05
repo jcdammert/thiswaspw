@@ -110,7 +110,7 @@ export default async function ServiceAreaPage({
               src="/images/hero-truck.jpg"
               alt={`Finesse Cleaning truck on site in ${area.name}, FL`}
               fill
-              className="object-cover"
+              className="object-cover object-bottom"
             />
           </div>
         </div>

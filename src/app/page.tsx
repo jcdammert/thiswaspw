@@ -82,7 +82,7 @@ export default function Home() {
               alt="Finesse Cleaning truck on site at a South Florida home"
               fill
               priority
-              className="object-cover"
+              className="object-cover object-bottom"
             />
           </div>
         </div>
