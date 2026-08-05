@@ -199,6 +199,204 @@ export const serviceAreas: ServiceArea[] = cities.map((name) => ({
   county: cityCounty[name],
 }));
 
+export type CityContent = {
+  paragraph1: string;
+  paragraph2: string;
+  metaHook: string;
+};
+
+export const cityContent: Record<string, CityContent> = {
+  Weston: {
+    paragraph1:
+      "Weston is one of Broward's most master-planned cities, built around lakes, golf courses, and gated communities like Weston Hills and Windmill Ranch Estates. Tile roofs, paver driveways, and lush landscaping are the norm here, and the city sits right on the edge of the Everglades, which means extra humidity and a steady supply of airborne organic material settling on every exterior surface.",
+    paragraph2:
+      "That combination of shade, moisture, and proximity to wetlands is exactly what feeds the black streaks and green algae we see on Weston roofs and the mildew that creeps up stucco walls facing the canals. We soft wash tile roofs without cracking them, keep paver driveways looking freshly sealed, and clean pool decks and screened patios so Weston's HOAs stay off your back.",
+    metaHook: "Serving Weston's gated communities and lakefront homes near the Everglades.",
+  },
+  Davie: {
+    paragraph1:
+      "Davie has kept its cowboy roots even as it grew into a Broward suburb — it's still home to a working rodeo arena, hitching posts downtown, and more horse properties than anywhere else in the county. Between that ranch heritage and Nova Southeastern University's sprawling campus, Davie is a mix of barns, paddocks, and newer subdivisions all sharing the same sandy soil and afternoon storms.",
+    paragraph2:
+      "Horse properties mean mud, manure dust, and hay debris get tracked onto driveways and building exteriors in a way most cities don't deal with, on top of the usual Florida algae and mildew. We wash barns, fences, driveways, and homes across Davie's ranch lots and its subdivisions alike, using the right pressure so we don't damage wood fencing or older block construction.",
+    metaHook: "Washing horse properties, barns, and family homes across Davie's ranch country.",
+  },
+  Plantation: {
+    paragraph1:
+      "Plantation is one of Broward's older, more established suburbs, known for its tree canopy — including the jacaranda trees that give Jacaranda Country Club its name — and a mix of midcentury ranch homes alongside newer construction. Central Broward's office corridors run through Plantation too, so we see everything from single-family homes with mature landscaping to commercial storefronts along Broward Boulevard and University Drive.",
+    paragraph2:
+      "All that tree cover is great for shade but rough on roofs and driveways — falling leaves, sap, and pollen feed algae and mildew faster than in more open neighborhoods. We soft wash roofs and siding, strip stains off driveways and walkways, and keep Plantation's commercial properties looking sharp for customers driving by on the main corridors.",
+    metaHook: "Cleaning tree-shaded homes and commercial storefronts across Plantation.",
+  },
+  Sunrise: {
+    paragraph1:
+      "Sunrise is best known for Sawgrass Mills, one of the largest outlet malls in the country, and Amerant Bank Arena, home of the Florida Panthers — which means a huge amount of retail and commercial square footage alongside its residential subdivisions. Most of Sunrise's neighborhoods were built in the 1970s and 80s around a network of lakes and canals that keep the whole city green but also humid.",
+    paragraph2:
+      "That mix of aging stucco homes, lake-adjacent lots, and heavy retail traffic means we do a lot of both: house washing and driveway cleaning in the residential subdivisions, and storefront, sidewalk, and parking lot washing for the retail and commercial strips near Sawgrass Mills and the arena district.",
+    metaHook: "Serving Sunrise homes, lakeside subdivisions, and the retail corridor near Sawgrass Mills.",
+  },
+  "Pembroke Pines": {
+    paragraph1:
+      "Pembroke Pines grew from farmland into one of Broward's largest cities almost entirely through master-planned subdivisions, many of them gated, with red tile roofs and paver driveways that are now old enough to need real attention. C.B. Smith Park and a wide network of family neighborhoods make up most of the city, especially in the newer western sections built out through the 90s and 2000s.",
+    paragraph2:
+      "Tile roofs are the biggest concern we see in Pembroke Pines — black algae streaking is common on west-facing slopes, and HOAs here are strict about curb appeal. We soft wash roofs the right way so tiles don't crack, and we handle the paver sealing and driveway cleaning that keeps these subdivisions looking the way they did when they were new.",
+    metaHook: "Roof soft washing and paver care for Pembroke Pines' master-planned subdivisions.",
+  },
+  Miramar: {
+    paragraph1:
+      "Miramar was a quiet agricultural community until the 1990s and 2000s, when it became one of the fastest-growing cities in the country, filling in with master-planned communities like Riviera Isles and Miramar Isles that favor Mediterranean and Spanish Revival architecture — barrel tile roofs, stucco exteriors, and lakefront lots. Miramar Park of Commerce also brought in a large corporate office presence along the I-75 corridor.",
+    paragraph2:
+      "Newer construction still means real maintenance needs in this climate — Mediterranean-style tile roofs show algae fast, and the lakes that make Miramar's communities so appealing also add humidity that speeds up mildew on stucco. We soft wash roofs and walls, clean pool decks and patios, and handle exterior washing for the office parks along the Park of Commerce corridor.",
+    metaHook: "Roof and exterior washing for Miramar's Spanish Revival communities and office corridor.",
+  },
+  "Southwest Ranches": {
+    paragraph1:
+      "Southwest Ranches was incorporated specifically to protect its rural, equestrian character — the town requires lots of at least one acre, and by design there are no sidewalks or streetlights in most of it. Residents keep horses, and sometimes goats or chickens, on properties with barns, riding arenas, and guest houses spread across large, tree-shaded lots along the edge of the Everglades.",
+    paragraph2:
+      "Large properties here mean more roof, fence, and driveway square footage than almost anywhere else in Broward, plus the mud and organic debris that come with keeping animals. We wash barns, long fence lines, gravel and paver driveways, and homes across Southwest Ranches' big lots, working around horses and outbuildings without disrupting the property.",
+    metaHook: "Washing barns, fences, and large equestrian properties across Southwest Ranches.",
+  },
+  "Cooper City": {
+    paragraph1:
+      "Cooper City was planned from the start to stay small-town, and it shows — the city has more than twenty parks woven through its neighborhoods, low-density zoning, and a homeownership rate around 66% that keeps residents invested in how their streets look. Neighborhoods like Timberlake are known for well-kept single-family homes with mature trees and quiet cul-de-sacs.",
+    paragraph2:
+      "That civic pride translates into real expectations for curb appeal — driveways, roofs, and exteriors that look neglected stand out fast in a city this well cared for. We help Cooper City homeowners keep that reputation up with roof soft washing, driveway and paver cleaning, and house washing that matches the same attention to detail the city is known for.",
+    metaHook: "Keeping Cooper City's well-kept, family-oriented neighborhoods looking their best.",
+  },
+  "Coral Springs": {
+    paragraph1:
+      "Coral Springs was built out of former Everglades marshland starting in the 1960s as a fully master-planned city, and it's kept that reputation as an 'All-America City' with tree-lined streets, an extensive canal system, and neighborhoods organized around parks and the Coral Springs Center for the Arts. Many homes back up to canals or lakes that were part of the original drainage design.",
+    paragraph2:
+      "Canal-front and lake-front lots in Coral Springs deal with more humidity and waterline algae than homes further inland, and the tree canopy the city is proud of also means more organic buildup on roofs and driveways. We soft wash roofs, clean seawalls and pool decks, and keep driveways and walkways free of the algae that waterfront living brings.",
+    metaHook: "Roof and waterfront cleaning for Coral Springs' canal-front neighborhoods.",
+  },
+  Parkland: {
+    paragraph1:
+      "Parkland is one of the most upscale cities in Broward County, with large custom homes on estate-sized lots in communities like Parkland Golf & Country Club, The Ranches, and Watermark. It backs up to the Everglades on its western edge, giving it a semi-rural feel despite the high-end construction, and most homes here have premium tile roofs and extensive paver hardscaping.",
+    paragraph2:
+      "Premium finishes need careful handling — we use soft washing on Parkland's tile roofs specifically to protect the investment homeowners have made, and we treat paver driveways and pool decks with the same care. Being this close to the Everglades also means more algae pressure than in denser, more inland parts of Broward.",
+    metaHook: "Soft washing and paver care for Parkland's estate homes near the Everglades.",
+  },
+  Tamarac: {
+    paragraph1:
+      "Tamarac has one of the largest concentrations of 55+ communities in Broward County, including Kings Point, the Mainlands, and neighborhoods built around golf courses like Colony West, Woodmont, and Inverrary. Most of these communities feature villas, condos, and single-family homes with shared clubhouses, pools, and walkways that are maintained collectively rather than by individual homeowners.",
+    paragraph2:
+      "Shared amenities like clubhouse pool decks, community walkways, and building exteriors need regular attention to stay safe and presentable for residents, and we work directly with Tamarac's HOAs and condo associations on that kind of scheduled maintenance. We also handle individual driveway, roof, and exterior cleaning for homeowners throughout the golf course communities.",
+    metaHook: "Serving Tamarac's 55+ and golf course communities, from HOAs to individual homes.",
+  },
+  Lauderhill: {
+    paragraph1:
+      "Lauderhill is one of Broward's most culturally diverse cities, with deep Jamaican, Haitian, and Caribbean roots that show up in everything from local restaurants to the international cricket matches hosted at Central Broward Regional Park. Housing here ranges from the gated, golf-course community of Inverrary to more affordable condos and classic single-family neighborhoods like Woodmont.",
+    paragraph2:
+      "That range of housing stock means Lauderhill jobs vary a lot — from full exterior washing on Inverrary's larger homes to more targeted driveway and walkway cleaning in denser condo areas. We work with both individual homeowners and property managers here, and we're familiar with the mix of older and newer construction across the city.",
+    metaHook: "Exterior cleaning across Lauderhill's diverse neighborhoods, from Inverrary to Woodmont.",
+  },
+  "Fort Lauderdale": {
+    paragraph1:
+      "Fort Lauderdale earned its nickname 'the Venice of America' honestly — more than 165 miles of navigable canals run through the city, and a huge share of homes here have a dock, a seawall, or waterfront access. That's on top of a historic downtown around Las Olas Boulevard, older Mediterranean Revival neighborhoods like Rio Vista and Colee Hammock, and a skyline of newer high-rises near the beach.",
+    paragraph2:
+      "Salt air and constant humidity off the ocean and Intracoastal accelerate corrosion, mildew, and algae growth faster here than almost anywhere else in Broward, especially on seawalls, docks, and homes near the water. We soft wash roofs and siding, clean seawalls and pool decks, and handle the rust and salt staining that waterfront properties deal with year-round.",
+    metaHook: "Fighting salt air and canal-side buildup for Fort Lauderdale's waterfront homes.",
+  },
+  Hollywood: {
+    paragraph1:
+      "Hollywood stretches from the historic Art Deco and Mediterranean Revival buildings around Young Circle and Hollywood Beach's 2.5-mile Broadwalk inland to quieter, lake-filled neighborhoods like Hollywood Hills and Emerald Hills. It's a city of contrasts — beachfront condos dealing with direct salt spray, and inland golf course homes dealing with more standard Florida humidity and shade.",
+    paragraph2:
+      "Properties near the beach need more frequent attention because salt air eats through paint, metal railings, and stucco faster than inland homes ever see, while the older architecture downtown often has decorative surfaces that need gentler pressure. We adjust our approach block by block in Hollywood, from beachside buildings to the golf course communities further west.",
+    metaHook: "From Hollywood Beach's salt air to Emerald Hills' golf course homes.",
+  },
+  "Coconut Creek": {
+    paragraph1:
+      "Coconut Creek calls itself the Butterfly Capital of the World thanks to Butterfly World in Tradewinds Park, and the whole city was designed with that same environmental focus — it was the first city in Florida certified as a Community Wildlife Habitat, and it's full of preserved trees, waterways, and green space woven between its neighborhoods.",
+    paragraph2:
+      "All that greenery and water is part of why Coconut Creek is such a pleasant place to live, but it's also a steady source of pollen, leaf debris, and moisture that builds up on roofs, driveways, and screened enclosures faster than in more built-out cities. We soft wash roofs and clean screen enclosures and driveways to keep that natural setting from taking over your home's exterior.",
+    metaHook: "Roof and screen enclosure cleaning for Coconut Creek's tree-shaded neighborhoods.",
+  },
+  Miami: {
+    paragraph1:
+      "Miami is a city of extremes — glass high-rises in Brickell and Downtown, converted warehouses and murals in Wynwood, historic bungalows in Little Havana and Coconut Grove, and dense multifamily housing throughout. That range means we work on everything from condo tower balconies and commercial storefronts to older single-family homes with decades of South Florida weather on them.",
+    paragraph2:
+      "Being this close to Biscayne Bay and the ocean means constant salt air and humidity that speeds up mildew, algae, and metal corrosion across the entire city, on top of pollution buildup on commercial storefronts and sidewalks downtown. We handle high-rise adjacent surfaces, commercial washing for storefronts and walkways, and full house washing for Miami's residential neighborhoods.",
+    metaHook: "Commercial and residential washing across Miami's high-rises and historic neighborhoods.",
+  },
+  "Miami Lakes": {
+    paragraph1:
+      "Miami Lakes was designed from scratch in the 1960s as a self-contained planned town, with everything oriented around Main Street — a walkable commercial hub with Mediterranean architecture, brick sidewalks, and shaded streets that's still the heart of the community today. Residential neighborhoods spiral outward from there around the town's namesake lakes.",
+    paragraph2:
+      "The Mediterranean-style architecture that gives Miami Lakes its character — stucco facades, tile roofs, arched details — needs a gentler, more careful wash than plain block construction, and the lakefront lots deal with extra humidity and algae. We soft wash roofs and exteriors around Main Street and throughout the residential loops, plus commercial cleaning for the shops and offices along Main Street itself.",
+    metaHook: "Careful soft washing for Miami Lakes' Mediterranean architecture around Main Street.",
+  },
+  "Miami Gardens": {
+    paragraph1:
+      "Miami Gardens is home to Hard Rock Stadium, host to the Dolphins, the Miami Open, and major concerts and events that bring huge crowds through the city every year. Away from the stadium, it's a large, mostly residential city with a mix of established ranch-style neighborhoods and newer development, plus a growing logistics and warehouse presence near the airport corridor.",
+    paragraph2:
+      "With that much event traffic passing through, commercial properties and storefronts near the stadium corridor need to stay presentable year-round, while residential neighborhoods deal with the same humidity-driven algae and mildew as the rest of Miami-Dade. We handle both — commercial exterior washing near the stadium district and house washing, driveway cleaning, and roof soft washing throughout Miami Gardens' neighborhoods.",
+    metaHook: "Commercial and residential washing near Hard Rock Stadium and beyond.",
+  },
+  Hialeah: {
+    paragraph1:
+      "Hialeah is one of the most densely populated cities in Florida, with a tightly packed grid of concrete block homes, duplexes, and triplexes built close together, deep Cuban-American roots, and a historic racetrack in Hialeah Park. Space is tight here compared to the suburbs further west, and a lot of the housing stock dates back several decades.",
+    paragraph2:
+      "Older concrete block construction packed closely together tends to hold onto humidity and shade longer, which shows up as mildew streaking on walls and driveways that sit close to neighboring buildings. We work efficiently in Hialeah's tighter lots, washing exteriors, driveways, and walkways without disrupting neighbors on either side.",
+    metaHook: "Exterior and driveway washing for Hialeah's dense, historic neighborhoods.",
+  },
+  Doral: {
+    paragraph1:
+      "Doral grew up around the Doral Golf Resort and its famous Blue Monster course, and that legacy shows in the city's mix of golf course communities, man-made lakes, and modern gated developments with red tile roofs. It's also become a major corporate and logistics hub thanks to its location next to Miami International Airport, with new high-rise condos and office parks going up constantly.",
+    paragraph2:
+      "New construction in Doral still means real upkeep — tile roofs and stucco on newer homes show algae surprisingly fast in this humidity, and the lakes that give these communities their resort feel add extra moisture to the mix. We soft wash roofs and exteriors on Doral's newer builds and handle commercial washing for the office parks and retail centers near the airport corridor.",
+    metaHook: "Roof and exterior washing for Doral's golf communities and airport-corridor offices.",
+  },
+  Homestead: {
+    paragraph1:
+      "Homestead sits between two national parks — Everglades to the west and Biscayne to the east — and its economy and character are still shaped by the surrounding Redland farmland, where fruit stands, nurseries, and family farms fill the roadside. Much of the city's housing was rebuilt after Hurricane Andrew in 1992, so the stock skews newer than most of Miami-Dade, alongside a growing warehouse and logistics footprint.",
+    paragraph2:
+      "Being this close to open farmland and two national parks means more dust, pollen, and organic debris landing on roofs and driveways than in denser parts of the county, plus the routine algae and mildew that come with South Florida humidity. We handle roof soft washing, driveway cleaning, and exterior washing for both Homestead's residential neighborhoods and its agricultural and industrial properties.",
+    metaHook: "Roof and exterior washing near Homestead's farmland and national park gateways.",
+  },
+  Kendall: {
+    paragraph1:
+      "Kendall is one of Miami-Dade's largest suburban areas, built out mostly in the 1970s through 90s along a network of canals, with single-family homes on quiet cul-de-sacs and a heavy concentration of screened-in pools and lanais that are practically standard for the area. Major shopping corridors near Dadeland anchor the neighborhood without disrupting its residential feel.",
+    paragraph2:
+      "With so many screened pool enclosures and lanais in Kendall, algae and mildew on screens and pool decks are some of the most common calls we get here, along with the usual roof and driveway buildup from decades-old canal-adjacent landscaping. We clean screen enclosures, pool decks, driveways, and roofs throughout Kendall's established neighborhoods.",
+    metaHook: "Screen enclosure and pool deck cleaning for Kendall's canal-side neighborhoods.",
+  },
+  "Boca Raton": {
+    paragraph1:
+      "Boca Raton's architecture still carries Addison Mizner's Mediterranean Revival influence from the 1920s — red barrel tile roofs, pink and cream stucco, and arched details show up across the city, from historic districts to newer construction in golf communities like Royal Palm Yacht & Country Club and St. Andrews. It's one of the most affluent cities in Palm Beach County, with high standards for curb appeal to match.",
+    paragraph2:
+      "That signature red barrel tile is beautiful but shows black algae streaking fast, and it takes a careful soft-wash technique to clean without cracking or dislodging tiles — which is exactly what we specialize in. We also handle the paver driveways, pool decks, and stucco exteriors that make up Boca's high-end properties, with the same attention to detail the city expects.",
+    metaHook: "Soft washing Boca Raton's signature red barrel tile roofs and Mediterranean stucco.",
+  },
+  "Delray Beach": {
+    paragraph1:
+      "Delray Beach built its reputation on a walkable, artsy downtown along Atlantic Avenue, with historic Old School Square, brick-paved sections, and a mix of restored coastal cottages and newer construction stretching from the beach inland. It's a smaller, more pedestrian-focused city than its neighbors, with a lot of pride in how the downtown core and residential streets look.",
+    paragraph2:
+      "Coastal salt air affects Delray's beachside properties the same way it does the rest of the coast, while the brick sidewalks and pavers downtown need periodic cleaning to stay looking sharp for the foot traffic Atlantic Avenue draws. We wash homes, driveways, and commercial storefronts throughout Delray, from the beachfront to the inland residential streets.",
+    metaHook: "Washing coastal cottages and downtown storefronts along Delray's Atlantic Avenue.",
+  },
+  "Boynton Beach": {
+    paragraph1:
+      "Boynton Beach has been revitalizing its marina district and waterfront downtown while the rest of the city fills in with a mix of older developments from the 70s and 80s and newer construction further west. Canal and Intracoastal-adjacent homes are common here, giving a good number of residents direct water access without the price tag of Delray or Boca.",
+    paragraph2:
+      "Canal-front homes in Boynton Beach deal with the same waterline algae and humidity issues as anywhere else on the water, and the mix of older and newer roofs across the city means we see everything from routine soft washing to more stubborn stain removal. We handle house washing, roof cleaning, and driveway work throughout Boynton's canal neighborhoods and inland subdivisions alike.",
+    metaHook: "House and canal-front cleaning across Boynton Beach's marina district and suburbs.",
+  },
+  Wellington: {
+    paragraph1:
+      "Wellington is known worldwide as the Winter Equestrian Capital, home to Wellington International and the Winter Equestrian Festival, which draws Olympic-level riders and horses to communities like Palm Beach Point, Grand Prix Village, and Saddle Trail Park every season. Alongside the horse farms, Wellington also has plenty of standard gated communities like Olympia and Grand Isles, built around lakes with resort-style clubhouses.",
+    paragraph2:
+      "Equestrian properties bring the same mud, manure dust, and hay debris we see in Davie and Southwest Ranches, often spread across barns and arenas as large as the homes themselves, while the lake communities deal with more typical Florida humidity and algae. We wash barns, fences, and equestrian estates as carefully as we wash the roofs and driveways in Wellington's gated subdivisions.",
+    metaHook: "Washing equestrian estates and gated lake communities across Wellington.",
+  },
+  "West Palm Beach": {
+    paragraph1:
+      "West Palm Beach's downtown centers on Clematis Street and the waterfront along the Intracoastal, facing the island of Palm Beach across the water, with historic districts like El Cid and Flamingo Park full of Mediterranean Revival and Mission-style bungalows from the 1920s. It's a city of contrasts between that historic core and the newer high-rises filling in downtown.",
+    paragraph2:
+      "Being right on the Intracoastal means constant salt air and humidity that ages roofs, stucco, and metal fixtures faster than inland Palm Beach County, especially on the older bungalows in the historic districts that need a gentler touch. We soft wash roofs and exteriors throughout West Palm Beach, from the historic neighborhoods to the newer downtown high-rises and everything in between.",
+    metaHook: "Soft washing West Palm Beach's historic bungalows and Intracoastal-front properties.",
+  },
+};
+
 export type Testimonial = {
   quote: string;
   name: string;

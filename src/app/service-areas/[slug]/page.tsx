@@ -9,6 +9,7 @@ import {
   testimonials,
   phoneDisplay,
   phoneHref,
+  cityContent,
 } from "@/lib/data";
 
 const whyPickUs = [
@@ -43,9 +44,12 @@ export async function generateMetadata({
   const { slug } = await params;
   const area = serviceAreas.find((a) => a.slug === slug);
   if (!area) return {};
+  const content = cityContent[area.name];
   return {
     title: `Pressure Washing in ${area.name}, FL | Finesse Cleaning`,
-    description: `Finesse Cleaning provides premium pressure washing and soft washing in ${area.name}, FL. Roof washing, driveway cleaning, house washing, and more. Free quotes.`,
+    description: content
+      ? `${content.metaHook} Roof soft washing, driveway cleaning, house washing, and more. Free quotes.`
+      : `Finesse Cleaning provides premium pressure washing and soft washing in ${area.name}, FL. Roof washing, driveway cleaning, house washing, and more. Free quotes.`,
   };
 }
 
@@ -57,6 +61,7 @@ export default async function ServiceAreaPage({
   const { slug } = await params;
   const area = serviceAreas.find((a) => a.slug === slug);
   if (!area) notFound();
+  const content = cityContent[area.name];
 
   const nearby = serviceAreas
     .filter((a) => a.county === area.county && a.slug !== area.slug)
@@ -76,16 +81,14 @@ export default async function ServiceAreaPage({
               {area.name}&apos;s Trusted Pressure Washing Team
             </h2>
             <p className="mt-4 text-navy/60">
-              Finesse Cleaning has been restoring homes and businesses across
-              South Florida since 2014. In {area.name}, we handle everything
-              from roof soft washing and driveway cleaning to full house
-              washing and paver sealing.
+              {content
+                ? content.paragraph1
+                : `Finesse Cleaning has been restoring homes and businesses across South Florida since 2014. In ${area.name}, we handle everything from roof soft washing and driveway cleaning to full house washing and paver sealing.`}
             </p>
             <p className="mt-4 text-navy/60">
-              As a local {area.county} team, we know the algae, mildew, and
-              hard water stains that build up fast in this climate. We use
-              the right pressure and safe soaps for every surface, and we do
-              a full walk-through with you when the job is done.
+              {content
+                ? content.paragraph2
+                : `As a local ${area.county} team, we know the algae, mildew, and hard water stains that build up fast in this climate. We use the right pressure and safe soaps for every surface, and we do a full walk-through with you when the job is done.`}
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
