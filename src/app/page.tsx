@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { services, testimonials, serviceAreas, phoneDisplay, phoneHref } from "@/lib/data";
 import { ShieldCheckIcon, TargetIcon, LeafIcon } from "@/components/icons";
+import GoogleReviewBadge from "@/components/GoogleReviewBadge";
 
 const whyPickIcons = [ShieldCheckIcon, TargetIcon, LeafIcon];
 
@@ -74,9 +75,7 @@ export default function Home() {
         />
         <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 py-20 lg:grid-cols-2 lg:px-8">
           <div>
-            <span className="inline-block rounded-full bg-white/10 px-4 py-1 text-xs font-semibold tracking-wide text-white/90">
-              RATED 5.0 IN SOUTH FLORIDA
-            </span>
+            <GoogleReviewBadge variant="dark" />
             <h1 className="mt-6 text-4xl font-bold leading-tight sm:text-5xl">
               Restore Your Property&apos;s Clean Condition.
             </h1>

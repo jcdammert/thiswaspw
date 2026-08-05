@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { navLinks, services, phoneDisplay, phoneHref, email } from "@/lib/data";
+import GoogleReviewBadge from "@/components/GoogleReviewBadge";
 
 export default function Footer() {
   return (
@@ -20,6 +21,9 @@ export default function Footer() {
                 {email}
               </a>
               <p>24/7 Service</p>
+            </div>
+            <div className="mt-6">
+              <GoogleReviewBadge variant="dark" />
             </div>
           </div>
 
