@@ -37,6 +37,7 @@ export default async function ServiceDetailPage({
   const detail = serviceDetails[service.slug];
 
   const otherServices = services.filter((s) => s.slug !== service.slug);
+  const hasBeforeAfter = Boolean(detail?.beforeImage && detail?.afterImage);
 
   return (
     <>
@@ -46,7 +47,11 @@ export default async function ServiceDetailPage({
       />
 
       <section className="bg-white">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 py-20 lg:grid-cols-2 lg:px-8">
+        <div
+          className={`mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 py-20 lg:px-8 ${
+            hasBeforeAfter ? "max-w-3xl text-center" : "lg:grid-cols-2"
+          }`}
+        >
           <div>
             <h2 className="text-2xl font-bold text-navy sm:text-3xl">
               {service.title}: What to Expect
@@ -54,7 +59,11 @@ export default async function ServiceDetailPage({
             <p className="mt-4 text-navy/60">
               {detail ? detail.overview : service.description}
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div
+              className={`mt-8 flex flex-wrap gap-4 ${
+                hasBeforeAfter ? "justify-center" : ""
+              }`}
+            >
               <Link
                 href="/contact"
                 className="rounded-full bg-brand px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand/90"
@@ -69,14 +78,16 @@ export default async function ServiceDetailPage({
               </a>
             </div>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-            <Image
-              src={service.image}
-              alt={service.title}
-              fill
-              className="object-cover"
-            />
-          </div>
+          {!hasBeforeAfter && (
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+              <Image
+                src={service.image}
+                alt={service.title}
+                fill
+                className="object-cover"
+              />
+            </div>
+          )}
         </div>
       </section>
 
