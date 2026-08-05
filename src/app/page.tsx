@@ -1,6 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { services, testimonials, serviceAreas, phoneDisplay, phoneHref } from "@/lib/data";
+import { ShieldCheckIcon, TargetIcon, LeafIcon } from "@/components/icons";
+
+const whyPickIcons = [ShieldCheckIcon, TargetIcon, LeafIcon];
 
 const whyPickUs = [
   {
@@ -48,8 +51,28 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-navy text-white">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 py-20 lg:grid-cols-2 lg:px-8">
+      <section className="relative overflow-hidden bg-navy text-white">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px)",
+            backgroundSize: "28px 28px",
+            maskImage:
+              "linear-gradient(to bottom, black, transparent), radial-gradient(circle at 30% 20%, black, transparent 70%)",
+            maskComposite: "intersect",
+            WebkitMaskImage:
+              "linear-gradient(to bottom, black, transparent), radial-gradient(circle at 30% 20%, black, transparent 70%)",
+            WebkitMaskComposite: "source-in",
+            opacity: 0.5,
+          }}
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -top-32 left-1/3 h-96 w-96 rounded-full bg-brand/20 blur-3xl"
+        />
+        <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 py-20 lg:grid-cols-2 lg:px-8">
           <div>
             <span className="inline-block rounded-full bg-white/10 px-4 py-1 text-xs font-semibold tracking-wide text-white/90">
               RATED 5.0 IN SOUTH FLORIDA
@@ -159,14 +182,20 @@ export default function Home() {
             </p>
           </div>
           <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-3">
-            {whyPickUs.map((item) => (
-              <div key={item.title} className="rounded-2xl bg-white/5 p-8">
-                <h3 className="text-lg font-bold">{item.title}</h3>
-                <p className="mt-2 text-sm text-white/60">
-                  {item.description}
-                </p>
-              </div>
-            ))}
+            {whyPickUs.map((item, i) => {
+              const Icon = whyPickIcons[i];
+              return (
+                <div key={item.title} className="rounded-2xl bg-white/5 p-8">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand/20 text-brand">
+                    <Icon className="h-6 w-6" />
+                  </span>
+                  <h3 className="mt-4 text-lg font-bold">{item.title}</h3>
+                  <p className="mt-2 text-sm text-white/60">
+                    {item.description}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

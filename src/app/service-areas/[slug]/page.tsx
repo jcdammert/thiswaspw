@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import PageHero from "@/components/PageHero";
+import { ShieldCheckIcon, TargetIcon, LeafIcon } from "@/components/icons";
 import {
   serviceAreas,
   services,
@@ -11,6 +12,8 @@ import {
   phoneHref,
   cityContent,
 } from "@/lib/data";
+
+const whyPickIcons = [ShieldCheckIcon, TargetIcon, LeafIcon];
 
 const whyPickUs = [
   {
@@ -158,14 +161,20 @@ export default async function ServiceAreaPage({
             <h2 className="text-3xl font-bold sm:text-4xl">Why Pick Finesse</h2>
           </div>
           <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-3">
-            {whyPickUs.map((item) => (
-              <div key={item.title} className="rounded-2xl bg-white/5 p-8">
-                <h3 className="text-lg font-bold">{item.title}</h3>
-                <p className="mt-2 text-sm text-white/60">
-                  {item.description}
-                </p>
-              </div>
-            ))}
+            {whyPickUs.map((item, i) => {
+              const Icon = whyPickIcons[i];
+              return (
+                <div key={item.title} className="rounded-2xl bg-white/5 p-8">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand/20 text-brand">
+                    <Icon className="h-6 w-6" />
+                  </span>
+                  <h3 className="mt-4 text-lg font-bold">{item.title}</h3>
+                  <p className="mt-2 text-sm text-white/60">
+                    {item.description}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

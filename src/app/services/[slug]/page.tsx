@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import PageHero from "@/components/PageHero";
+import { ServiceIcon, ShieldCheckIcon, TargetIcon, LeafIcon } from "@/components/icons";
 import { services, serviceDetails, phoneDisplay, phoneHref } from "@/lib/data";
 
 type Params = { slug: string };
@@ -35,7 +36,7 @@ export default async function ServiceDetailPage({
   if (!service) notFound();
   const detail = serviceDetails[service.slug];
 
-  const related = services.filter((s) => s.slug !== service.slug).slice(0, 3);
+  const otherServices = services.filter((s) => s.slug !== service.slug);
 
   return (
     <>
@@ -138,21 +139,30 @@ export default async function ServiceDetailPage({
           </div>
           <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-3">
             <div className="rounded-2xl bg-white/5 p-8">
-              <h3 className="text-lg font-bold">Satisfaction Guarantee</h3>
+              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand/20 text-brand">
+                <ShieldCheckIcon className="h-6 w-6" />
+              </span>
+              <h3 className="mt-4 text-lg font-bold">Satisfaction Guarantee</h3>
               <p className="mt-2 text-sm text-white/60">
                 We do a full walk-through when we finish. We make sure you
                 are completely happy before we leave.
               </p>
             </div>
             <div className="rounded-2xl bg-white/5 p-8">
-              <h3 className="text-lg font-bold">Focus on Quality</h3>
+              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand/20 text-brand">
+                <TargetIcon className="h-6 w-6" />
+              </span>
+              <h3 className="mt-4 text-lg font-bold">Focus on Quality</h3>
               <p className="mt-2 text-sm text-white/60">
                 We pay attention to the details that others miss. We do the
                 job right the first time.
               </p>
             </div>
             <div className="rounded-2xl bg-white/5 p-8">
-              <h3 className="text-lg font-bold">Safe Cleaning Products</h3>
+              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand/20 text-brand">
+                <LeafIcon className="h-6 w-6" />
+              </span>
+              <h3 className="mt-4 text-lg font-bold">Safe Cleaning Products</h3>
               <p className="mt-2 text-sm text-white/60">
                 We use safe soaps that break down naturally. Your plants and
                 pets are safe with us.
@@ -162,33 +172,33 @@ export default async function ServiceDetailPage({
         </div>
       </section>
 
-      {related.length > 0 && (
-        <section className="bg-white">
-          <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+      {otherServices.length > 0 && (
+        <section className="relative overflow-hidden bg-navy/5">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -top-24 right-0 h-72 w-72 rounded-full bg-brand/10 blur-3xl"
+          />
+          <div className="relative mx-auto max-w-7xl px-6 py-20 lg:px-8">
             <h2 className="text-center text-2xl font-bold text-navy sm:text-3xl">
-              Other Services We Offer
+              Every Service We Offer
             </h2>
-            <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-3">
-              {related.map((s) => (
+            <p className="mx-auto mt-3 max-w-2xl text-center text-navy/60">
+              One team for the whole property — here&apos;s everything we
+              handle.
+            </p>
+            <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+              {otherServices.map((s) => (
                 <Link
                   key={s.slug}
                   href={`/services/${s.slug}`}
-                  className="overflow-hidden rounded-2xl border border-navy/10 bg-white shadow-sm transition-shadow hover:shadow-md"
+                  className="group flex items-center gap-3 rounded-2xl border border-navy/10 bg-white p-4 shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand/30 hover:shadow-md"
                 >
-                  <div className="relative aspect-[16/10]">
-                    <Image
-                      src={s.image}
-                      alt={s.title}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-lg font-bold text-navy">{s.title}</h3>
-                    <p className="mt-2 text-sm text-navy/60">
-                      {s.description}
-                    </p>
-                  </div>
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand/10 text-brand transition-colors group-hover:bg-brand group-hover:text-white">
+                    <ServiceIcon slug={s.slug} className="h-5 w-5" />
+                  </span>
+                  <span className="text-sm font-semibold text-navy">
+                    {s.title}
+                  </span>
                 </Link>
               ))}
             </div>
