@@ -78,8 +78,8 @@ export default function Home() {
           </div>
           <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
             <Image
-              src="/images/hero.png"
-              alt="Professional pressure washing"
+              src="/images/hero-truck.jpg"
+              alt="Finesse Cleaning truck on site at a South Florida home"
               fill
               priority
               className="object-cover"

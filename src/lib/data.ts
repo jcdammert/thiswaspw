@@ -11,7 +11,7 @@ export const services: Service[] = [
     title: "Roof Soft Washing",
     description:
       "We safely remove algae and black streaks without high pressure. This protects your shingles and helps your roof last longer.",
-    image: "/images/gallery/roof-soft-washing-10.jpg",
+    image: "/images/gallery/roof-soft-washing-42.jpg",
   },
   {
     slug: "deck-cleaning",
@@ -60,14 +60,14 @@ export const services: Service[] = [
     title: "Window Cleaning",
     description:
       "We clean your windows inside and out. Streak-free results that let the sunshine in.",
-    image: "/images/gallery/window-cleaning-01.jpg",
+    image: "/images/gallery/window-cleaning-02.jpg",
   },
   {
     slug: "fence-cleaning",
     title: "Fence Cleaning",
     description:
       "We wash wood, vinyl, and PVC fences. We remove mold, mildew, and green algae safely.",
-    image: "/images/roof-soft-washing.jpg",
+    image: "/images/gallery/fence-cleaning-01.jpg",
   },
   {
     slug: "rust-removal-acid-wash",
@@ -88,7 +88,7 @@ export const services: Service[] = [
     title: "Painting Services",
     description:
       "Full service interior and exterior painting. We handle prep, prime, and finish for homes and businesses.",
-    image: "/images/gallery/commercial-services-20.jpg",
+    image: "/images/gallery/painting-services-01.jpg",
   },
   {
     slug: "sidewalk-cleaning",
@@ -116,7 +116,7 @@ export const services: Service[] = [
     title: "Maintenance Subscription Plans",
     description:
       "Monthly, quarterly, and semi-annual exterior cleaning packages. Keep your property looking great year-round without having to think about it.",
-    image: "/images/gallery/paver-sealing-sanding-11.jpg",
+    image: "/images/gallery/maintenance-subscription-01.jpg",
   },
 ];
 
