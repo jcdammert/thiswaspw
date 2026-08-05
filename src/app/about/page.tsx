@@ -65,10 +65,10 @@ export default function AboutPage() {
               honest work.
             </p>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+          <div className="relative aspect-[3/4] overflow-hidden rounded-2xl">
             <Image
-              src="/images/hero.png"
-              alt="Finesse Cleaning at work"
+              src="/images/about-team.jpg"
+              alt="The Finesse Cleaning team"
               fill
               className="object-cover"
             />
