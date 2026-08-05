@@ -104,8 +104,8 @@ export default async function ServiceAreaPage({
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
             <Image
-              src="/images/hero.png"
-              alt={`Pressure washing in ${area.name}, FL`}
+              src="/images/hero-truck.jpg"
+              alt={`Finesse Cleaning truck on site in ${area.name}, FL`}
               fill
               className="object-cover"
             />
