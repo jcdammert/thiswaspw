@@ -127,7 +127,7 @@ export default async function ServiceAreaPage({
             {services.map((service) => (
               <Link
                 key={service.slug}
-                href="/services"
+                href={`/services/${service.slug}`}
                 className="overflow-hidden rounded-2xl border border-navy/10 bg-white shadow-sm"
               >
                 <div className="relative aspect-[16/10]">

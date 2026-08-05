@@ -59,7 +59,7 @@ export default function ServicesPage() {
                     {service.description}
                   </p>
                   <Link
-                    href="/contact"
+                    href={`/services/${service.slug}`}
                     className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand"
                   >
                     Learn More <span aria-hidden>→</span>

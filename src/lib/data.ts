@@ -120,6 +120,320 @@ export const services: Service[] = [
   },
 ];
 
+export type ServiceDetail = {
+  overview: string;
+  approach: string;
+  includes: string[];
+  signs: string[];
+};
+
+export const serviceDetails: Record<string, ServiceDetail> = {
+  "roof-soft-washing": {
+    overview:
+      "Your roof takes more abuse from South Florida's climate than almost any other surface on your property. Humidity, shade, and rain feed the algae, lichen, and black streaking (usually a bacteria called Gloeocapsa magma) that build up on shingles and tiles over time. Left alone, that buildup doesn't just look bad — it holds moisture against your roofing material and shortens its life.",
+    approach:
+      "We soft wash every roof we clean, never pressure wash. High-pressure equipment can crack tiles, strip shingle granules, and force water under flashing, which is how roofs get damaged during a cleaning that was supposed to help them. Soft washing uses low pressure with a biodegradable, algae-killing solution that breaks down buildup at the root and rinses it away safely, protecting shingles, tile, and metal roofing alike.",
+    includes: [
+      "Full roof inspection before we start",
+      "Landscaping and gutters protected and pre-rinsed",
+      "Low-pressure application of a safe, algae-killing cleaning solution",
+      "Careful rinse that leaves shingles and tiles intact",
+      "Final walk-through so you can see the results",
+    ],
+    signs: [
+      "Black streaks running down from the ridge or vents",
+      "Green or gray patches, especially on shaded, north-facing slopes",
+      "Roof looks noticeably darker than when it was installed",
+      "Neighbors with similar-age roofs have already had theirs cleaned",
+    ],
+  },
+  "deck-cleaning": {
+    overview:
+      "Wood and composite decks take a beating from sun, rain, and foot traffic, and in Florida that means mildew, algae, and gray, weathered wood fibers building up fast. A dirty deck isn't just unsightly — it gets slippery, and if you're planning to stain or seal it, that new coat won't bond properly over the buildup.",
+    approach:
+      "We match the technique to the material. Wood decks get a gentler, controlled wash that lifts dirt and graying without raising the grain or splintering the boards, while composite decking can handle a bit more pressure to cut through mildew and algae without damaging the surface. Either way, we clean the full deck, including railings, stairs, and the gaps between boards where grime hides.",
+    includes: [
+      "Full surface assessment (wood species or composite type)",
+      "Pre-treatment for mildew, algae, and gray weathering",
+      "Pressure calibrated to your specific deck material",
+      "Railings, stairs, and board gaps included",
+      "Deck left ready for staining or sealing if needed",
+    ],
+    signs: [
+      "Wood looks gray, dull, or weathered instead of its natural color",
+      "Boards feel slick or slippery, especially after rain",
+      "Green or black buildup between boards or in shaded corners",
+      "It's been more than a year since the deck was cleaned or sealed",
+    ],
+  },
+  "paver-sealing-sanding": {
+    overview:
+      "Pavers are one of the biggest investments in a South Florida yard, and they need real maintenance to keep looking that way. Sun fades the color, weeds and ants work their way into the joints, and years of foot traffic wear down the sand that holds everything together and keeps pavers from shifting.",
+    approach:
+      "We start by pressure washing the pavers to strip away dirt, algae, and old sealer, then let them fully dry. Next we re-sand the joints with polymeric sand, which hardens once it's activated with water and locks pavers in place while blocking weeds and ants far better than regular sand. We finish with a penetrating or film-forming sealer, depending on the look you want, which brings the color back and protects against stains and UV fading.",
+    includes: [
+      "Pressure washing to strip dirt, algae, and old sealer",
+      "Full dry-out period before sanding and sealing",
+      "Polymeric sand applied to all joints",
+      "Sealer applied for color enhancement and stain protection",
+      "Weed and ant resistance built into the finished joints",
+    ],
+    signs: [
+      "Pavers look faded, dusty, or washed-out",
+      "Sand is missing or low between the joints",
+      "Weeds or ants are showing up between pavers",
+      "It's been more than 2–3 years since the last sealing",
+    ],
+  },
+  "driveway-cleaning": {
+    overview:
+      "Your driveway is one of the first things people see when they pull up to your home or business, and in Florida it takes on oil drips, tire marks, rust from sprinklers, and the same algae and mildew that builds up everywhere else in this climate. A clean driveway changes the whole look of a property almost instantly.",
+    approach:
+      "We use hot water pressure washing with a surface cleaner attachment, which cleans evenly across the full width of the driveway without leaving the streaky lines you get from a standard wand. For oil stains and tire marks we pre-treat with a degreaser before washing, and for concrete, pavers, or brick we adjust pressure and technique so we clean thoroughly without etching or damaging the surface.",
+    includes: [
+      "Degreaser pre-treatment for oil stains and tire marks",
+      "Hot water pressure washing with a surface cleaner attachment",
+      "Even, streak-free coverage across the full driveway",
+      "Technique adjusted for concrete, pavers, or brick",
+      "Edges, expansion joints, and garage apron included",
+    ],
+    signs: [
+      "Oil stains, tire marks, or dark patches that don't wash off with a hose",
+      "Green or black algae staining, especially in shaded areas",
+      "Driveway looks noticeably darker or dingier than the surrounding concrete",
+      "Rust streaks from sprinkler heads or irrigation",
+    ],
+  },
+  "pool-deck-cleaning": {
+    overview:
+      "Pool decks combine two of Florida's biggest cleaning challenges: constant moisture from the pool and constant sun exposure, which together grow mold, mildew, and algae fast — especially in shaded corners and anywhere water tends to pool. Beyond looking bad, a dirty pool deck gets genuinely slippery, which is a real safety issue around water.",
+    approach:
+      "We clean pavers, concrete, travertine, and pool coping with pressure and technique matched to that specific surface, since travertine and stamped concrete need a gentler touch than broom-finished concrete. We pay close attention to the waterline and any areas that stay damp, since that's where mold and mildew take hold first, and we work carefully around pool equipment and water features.",
+    includes: [
+      "Surface-specific cleaning for pavers, concrete, or travertine",
+      "Focused attention on shaded and constantly damp areas",
+      "Mold and mildew removal at the waterline and coping",
+      "Slip-hazard buildup cleared from the full deck surface",
+      "Careful work around pool equipment and water features",
+    ],
+    signs: [
+      "Deck feels slippery when wet, even right after a rinse",
+      "Green or black growth around the waterline or in shaded corners",
+      "Coping or pavers look darker than the rest of the deck",
+      "It's been more than 6–12 months since the last cleaning",
+    ],
+  },
+  "commercial-services": {
+    overview:
+      "For a business, exterior cleanliness is part of the first impression — a dirty storefront, faded sign, or grimy walkway tells customers something about what to expect before they walk in the door. We work with retail storefronts, offices, restaurants, and commercial properties across South Florida to keep that first impression a good one.",
+    approach:
+      "We handle building exteriors, storefronts, signage, awnings, walkways, and parking areas, scheduling around your business hours so we don't disrupt customers or operations. Delicate surfaces like awnings, signage, and painted surfaces get soft washing, while walkways, parking lots, and dumpster pads get full pressure washing to handle heavier grime and gum. We also work with property managers and HOAs on recurring commercial contracts.",
+    includes: [
+      "Building exteriors, storefronts, and signage",
+      "Sidewalks, walkways, and parking areas",
+      "Awnings and delicate surfaces soft washed",
+      "Scheduling around business hours to avoid disruption",
+      "Recurring contracts available for property managers and HOAs",
+    ],
+    signs: [
+      "Storefront or building exterior looks dingy compared to neighboring businesses",
+      "Sidewalks have gum, stains, or algae buildup out front",
+      "Signage or awnings are dulled by dirt and mildew",
+      "It's been over a year since the property's last professional cleaning",
+    ],
+  },
+  "house-washing": {
+    overview:
+      "Your home's exterior — siding, stucco, brick, or vinyl — is constantly exposed to humidity, rain, and airborne organic material, and in South Florida that turns into mildew, algae, and dirt buildup faster than almost anywhere else in the country. A full house wash is one of the single biggest changes you can make to curb appeal.",
+    approach:
+      "We soft wash the entire exterior of your home, not pressure wash it. Stucco, siding, and painted surfaces can crack, peel, or get water forced behind them under high pressure, so we use low-pressure application with a cleaning solution designed to kill mildew and algae at the surface, then a gentle rinse. This gets your home genuinely clean without risking the paint, caulking, or siding itself.",
+    includes: [
+      "Full exterior soft wash — siding, stucco, brick, or vinyl",
+      "Mildew- and algae-killing solution, not just water pressure",
+      "Windows, soffits, and trim included in the wash",
+      "Landscaping protected throughout the process",
+      "Final walk-through before we consider the job done",
+    ],
+    signs: [
+      "Green or black streaking on siding or stucco, especially on shaded sides",
+      "Home looks dingy or discolored compared to when it was painted",
+      "Visible mildew around windows, vents, or roof lines",
+      "It's been more than a year since the exterior was professionally washed",
+    ],
+  },
+  "window-cleaning": {
+    overview:
+      "Streaky, hazy, or spotted windows block natural light and make an otherwise clean home or business look neglected. Florida's hard water, pollen, and salt air (for coastal properties) all leave residue on glass that a regular hose-down doesn't fully remove.",
+    approach:
+      "We clean windows inside and out using traditional squeegee and pole techniques for a true streak-free finish, not just a pressure rinse. That includes wiping down frames and sills, and clearing spider webs and debris from tracks. For screens, we remove, wash, and reinstall them, and for hard-to-reach or multi-story windows we use extension poles and safe access equipment rather than skipping them.",
+    includes: [
+      "Interior and exterior glass cleaned to a streak-free finish",
+      "Frames, sills, and tracks wiped down",
+      "Screens removed, washed, and reinstalled",
+      "Multi-story and hard-to-reach windows included",
+      "Spider webs and debris cleared from window areas",
+    ],
+    signs: [
+      "Hazy or spotted glass that doesn't clear up with regular cleaning",
+      "Visible hard water spots or streaking",
+      "Screens are dusty, discolored, or full of debris",
+      "Windows haven't been professionally cleaned in over 6 months to a year",
+    ],
+  },
+  "fence-cleaning": {
+    overview:
+      "Fences take on mold, mildew, and green algae fast, especially wood fences in shaded yards or anywhere moisture sits against the material. Beyond the look, a dirty wood fence holds moisture that speeds up rot, and vinyl or PVC fencing can yellow and stain if it's never cleaned.",
+    approach:
+      "We match the technique to the fence material. Wood gets a gentler soft wash to lift mold and algae without raising the grain, splintering boards, or stripping stain, while vinyl and PVC fencing can handle a more direct pressure wash to cut through algae and staining. Either way we clean both sides of the fence where access allows, not just the side facing your yard.",
+    includes: [
+      "Technique matched to wood, vinyl, or PVC fencing",
+      "Mold, mildew, and green algae removal",
+      "Both sides of the fence cleaned where accessible",
+      "Gentle handling that protects stain and paint on wood fences",
+      "Gates and hardware included in the cleaning",
+    ],
+    signs: [
+      "Green or black staining, especially on the shaded side",
+      "Wood fence looks gray or weathered instead of its natural tone",
+      "Vinyl or PVC fencing has yellowed or has visible algae film",
+      "Fence hasn't been cleaned since it was installed or last stained",
+    ],
+  },
+  "rust-removal-acid-wash": {
+    overview:
+      "Rust stains from sprinkler heads, metal furniture, railings, or naturally occurring iron in well water are some of the toughest stains on concrete, pavers, and pool surfaces — regular pressure washing alone usually won't touch them. Pool decks and pool surfaces can also develop scale, algae staining, or discoloration that needs a more targeted chemical treatment.",
+    approach:
+      "We use specialized rust-removing chemicals that bond to iron staining and lift it out of concrete and pavers without damaging the surface underneath, followed by a thorough rinse. For pool surfaces, we use acid washing, a controlled chemical treatment that removes staining, algae, and scale from plaster and pebble finishes to restore a clean, uniform look — this is a specialized process we handle carefully to protect the pool surface and surrounding landscaping.",
+    includes: [
+      "Targeted rust stain treatment for concrete, pavers, and railings",
+      "Acid washing for pool plaster and pebble surfaces",
+      "Landscaping and surrounding surfaces protected during treatment",
+      "Thorough rinse and neutralization after chemical application",
+      "Safe handling and disposal of all chemicals used",
+    ],
+    signs: [
+      "Orange or brown rust streaks from sprinklers or metal fixtures",
+      "Pool surface looks stained, scaled, or discolored",
+      "Rust stains that didn't come out with a standard pressure wash",
+      "Metal railings or furniture leaving rust marks on nearby concrete",
+    ],
+  },
+  "oil-stain-removal": {
+    overview:
+      "Oil and grease stains from vehicles are some of the most stubborn marks on a driveway or parking lot, and they only get harder to remove the longer they sit, as oil soaks deeper into porous concrete and asphalt over time.",
+    approach:
+      "We use hot water extraction paired with commercial-grade degreasers designed specifically to break down oil and grease at a molecular level, not just push it around. Hot water helps the degreaser penetrate deeper into the stain before we pressure wash it out, and for older or more deeply set stains we may repeat the process to fully lift the discoloration.",
+    includes: [
+      "Commercial-grade degreaser application",
+      "Hot water extraction for deeper stain penetration",
+      "Treatment for driveways, garage floors, and parking lots",
+      "Repeat treatment on older or heavily set stains when needed",
+      "Safe for concrete and asphalt surfaces",
+    ],
+    signs: [
+      "Dark oil or grease spots that persist after regular washing",
+      "Multiple stains across a driveway or parking area from repeated parking",
+      "Stains that have been there long enough to darken or spread",
+      "Parking lot or garage floor stains affecting a business's appearance",
+    ],
+  },
+  "painting-services": {
+    overview:
+      "A fresh coat of paint is one of the most effective ways to update and protect a home or business, but the result is only as good as the prep work underneath it. Paint applied over dirt, mildew, or peeling old paint fails faster and never looks as clean as it should.",
+    approach:
+      "We handle full interior and exterior painting, starting with proper prep — pressure or soft washing the surface, scraping and sanding loose or peeling paint, and patching or caulking as needed — before priming and applying a quality finish coat. We work on homes and businesses alike, matching paint type and technique to the surface, whether that's stucco, siding, drywall, or trim.",
+    includes: [
+      "Full surface prep — washing, scraping, sanding, and patching",
+      "Priming for proper paint adhesion",
+      "Interior and exterior painting for homes and businesses",
+      "Trim, doors, and detail work included",
+      "Quality finish coats matched to the surface type",
+    ],
+    signs: [
+      "Peeling, cracking, or fading paint on exterior surfaces",
+      "Interior walls with scuffs, stains, or outdated color",
+      "Bare or exposed stucco/siding showing through old paint",
+      "Preparing a home or business for sale or a fresh look",
+    ],
+  },
+  "sidewalk-cleaning": {
+    overview:
+      "Sidewalks and walkways see constant foot traffic, and in Florida they collect algae, dirt, gum, and stains fast, especially in shaded or high-traffic commercial areas. For businesses, a clean walkway is often the first surface a customer actually steps on.",
+    approach:
+      "We pressure wash sidewalks and walkways with a surface cleaner attachment for even, streak-free results across large areas, and treat gum, stains, and heavier buildup individually where needed. We work on residential walkways, commercial sidewalks, shopping center walkways, and public-facing paths, scheduling commercial jobs around foot traffic and business hours.",
+    includes: [
+      "Full-width pressure washing with a surface cleaner attachment",
+      "Spot treatment for gum, stains, and heavy buildup",
+      "Residential and commercial walkways",
+      "Scheduling around foot traffic for commercial properties",
+      "Algae and mildew removal on shaded sections",
+    ],
+    signs: [
+      "Algae or mildew staining, especially in shaded areas",
+      "Gum, stains, or dark buildup on high-traffic sections",
+      "Walkway looks dingy compared to surrounding landscaping or storefronts",
+      "It's been over a year since the last professional cleaning",
+    ],
+  },
+  "screen-enclosure-cleaning": {
+    overview:
+      "Pool cages and lanai screens take on algae, mold, dirt, and metal oxidation from constant sun and moisture exposure, and because the screen material itself is fragile, it's easy to damage with the wrong equipment or too much pressure.",
+    approach:
+      "We soft wash screen enclosures rather than pressure washing them, since standard pressure can tear screen mesh or bend the aluminum framing. Our process lifts algae, mold, and dirt from both the screens and the frame, and addresses the white, chalky oxidation that builds up on aluminum framing over time, restoring both the look and the airflow the screens are supposed to provide.",
+    includes: [
+      "Low-pressure soft wash safe for screen mesh",
+      "Algae, mold, and dirt removal from screens and framing",
+      "Oxidation treatment for aluminum frames",
+      "Full enclosure cleaned, not just visible panels",
+      "Screen integrity checked and protected throughout",
+    ],
+    signs: [
+      "Screens look dingy, gray, or streaked with algae",
+      "Aluminum framing has a chalky, white, oxidized look",
+      "Reduced visibility or airflow through the screens",
+      "Enclosure hasn't been cleaned since it was installed",
+    ],
+  },
+  "gutter-cleaning-flush": {
+    overview:
+      "Clogged gutters don't just overflow — in Florida's heavy rain, they send water pouring down siding and pooling right at your foundation, which is exactly the kind of moisture problem that leads to bigger issues over time. Leaves, seed pods, and debris build up fast under the tree canopy common across South Florida neighborhoods.",
+    approach:
+      "We clear debris from gutters by hand, then flush the full system with water to confirm downspouts are draining properly and there are no hidden clogs further down the line. We check for sagging sections, loose brackets, and obvious damage while we're up there, and flag anything beyond normal debris buildup so it can be addressed before it becomes a bigger repair.",
+    includes: [
+      "Hand removal of leaves, debris, and buildup",
+      "Full downspout flush to confirm proper drainage",
+      "Check for sagging sections or loose brackets",
+      "Roof edge and gutter line rinsed clean",
+      "Flagging of any damage beyond normal debris buildup",
+    ],
+    signs: [
+      "Water spilling over the sides of gutters during rain",
+      "Visible plant growth or debris piled in the gutters",
+      "Staining on siding beneath the gutter line",
+      "Standing water or erosion near the foundation after storms",
+    ],
+  },
+  "maintenance-subscription-plans": {
+    overview:
+      "The buildup that dulls roofs, driveways, and home exteriors in South Florida doesn't happen once a year — it's constant, thanks to the humidity and rain. A one-time cleaning looks great for a while, but a scheduled maintenance plan is what actually keeps a property looking that way year-round instead of sliding back to where it started.",
+    approach:
+      "We build monthly, quarterly, or semi-annual plans around what your property actually needs — that might be a quarterly house and driveway wash, a semi-annual roof soft wash, or a monthly commercial storefront and walkway cleaning. Plan customers get priority scheduling, consistent pricing instead of one-off quotes, and a team that already knows your property and its trouble spots.",
+    includes: [
+      "Custom scheduling — monthly, quarterly, or semi-annual",
+      "Combination of services tailored to your property",
+      "Priority scheduling ahead of one-time customers",
+      "Consistent, locked-in pricing for plan members",
+      "Available for both residential and commercial properties",
+    ],
+    signs: [
+      "Property looks great right after a cleaning but declines within months",
+      "You're tired of scheduling one-off cleanings every time buildup returns",
+      "Managing multiple properties or a commercial site with regular upkeep needs",
+      "You want predictable pricing instead of recurring one-time quotes",
+    ],
+  },
+};
+
 export type ServiceArea = {
   name: string;
   slug: string;

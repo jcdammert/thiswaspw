@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { serviceAreas } from "@/lib/data";
+import { serviceAreas, services } from "@/lib/data";
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://finesse-cleaning.vercel.app";
 
@@ -23,5 +23,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
   }));
 
-  return [...staticRoutes, ...cityRoutes];
+  const serviceRoutes = services.map((service) => ({
+    url: `${baseUrl}/services/${service.slug}`,
+    lastModified: new Date(),
+  }));
+
+  return [...staticRoutes, ...cityRoutes, ...serviceRoutes];
 }

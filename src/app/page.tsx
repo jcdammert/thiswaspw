@@ -136,7 +136,7 @@ export default function Home() {
                     {service.description}
                   </p>
                   <Link
-                    href="/services"
+                    href={`/services/${service.slug}`}
                     className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand"
                   >
                     Learn More <span aria-hidden>→</span>
