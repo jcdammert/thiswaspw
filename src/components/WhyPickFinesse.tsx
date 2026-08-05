@@ -27,12 +27,6 @@ export default function WhyPickFinesse({
             const Icon = icons[i];
             return (
               <div key={item.title} className="relative px-2 sm:px-10">
-                <span
-                  aria-hidden
-                  className="pointer-events-none absolute -top-8 left-1 select-none font-serif text-8xl font-bold text-brand/10 sm:left-6"
-                >
-                  {String(i + 1).padStart(2, "0")}
-                </span>
                 <span className="relative flex h-11 w-11 items-center justify-center rounded-xl bg-brand/20 text-brand">
                   <Icon className="h-6 w-6" />
                 </span>
