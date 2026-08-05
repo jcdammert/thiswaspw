@@ -80,6 +80,47 @@ export default async function ServiceDetailPage({
         </div>
       </section>
 
+      {detail && detail.beforeImage && detail.afterImage && (
+        <section className="bg-white">
+          <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+            <h2 className="text-center text-2xl font-bold text-navy sm:text-3xl">
+              Before &amp; After
+            </h2>
+            <p className="mx-auto mt-3 max-w-2xl text-center text-navy/60">
+              Real results from a real {service.title.toLowerCase()} job.
+            </p>
+            <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2">
+              <div className="overflow-hidden rounded-2xl">
+                <div className="relative aspect-[4/3]">
+                  <Image
+                    src={detail.beforeImage}
+                    alt={`${service.title} before — Finesse Cleaning`}
+                    fill
+                    className="object-cover"
+                  />
+                  <span className="absolute left-4 top-4 rounded-full bg-navy/80 px-4 py-1 text-xs font-bold uppercase tracking-wide text-white backdrop-blur-sm">
+                    Before
+                  </span>
+                </div>
+              </div>
+              <div className="overflow-hidden rounded-2xl">
+                <div className="relative aspect-[4/3]">
+                  <Image
+                    src={detail.afterImage}
+                    alt={`${service.title} after — Finesse Cleaning`}
+                    fill
+                    className="object-cover"
+                  />
+                  <span className="absolute left-4 top-4 rounded-full bg-brand px-4 py-1 text-xs font-bold uppercase tracking-wide text-white">
+                    After
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {detail && (
         <>
           <section className="bg-navy/5">

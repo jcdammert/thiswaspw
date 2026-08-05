@@ -125,6 +125,8 @@ export type ServiceDetail = {
   approach: string;
   includes: string[];
   signs: string[];
+  beforeImage?: string;
+  afterImage?: string;
 };
 
 export const serviceDetails: Record<string, ServiceDetail> = {
@@ -317,6 +319,8 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       "Rust stains that didn't come out with a standard pressure wash",
       "Metal railings or furniture leaving rust marks on nearby concrete",
     ],
+    beforeImage: "/images/gallery/house-washing-01.jpg",
+    afterImage: "/images/gallery/rust-removal-after-01.jpg",
   },
   "oil-stain-removal": {
     overview:
