@@ -718,45 +718,80 @@ export const cityContent: Record<string, CityContent> = {
 export type Testimonial = {
   quote: string;
   name: string;
-  city: string;
+  source: string;
+  rating: number;
 };
 
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "Finesse Cleaning transformed our roof and driveway. They were incredibly professional, showed up on time, and the results speak for themselves. Highly recommend!",
-    name: "Sarah J.",
-    city: "Boca Raton",
+      "I had a great experience with Finesse Cleaning. After receiving a letter from my HOA to clean our roof, we called our normal guy who didn't respond. I called after seeing their sign at a neighbors house in my community + Randy answered immediately. He was friendly, professional and was able to provide an estimate instantly. The price was really affordable so I accepted. They had an opening the next day + the team arrived ready to go as promised. The work was done swiftly + thoroughly. I highly recommend them for their expertise + incredibly customer service! Thanks, Randy!!!",
+    name: "Kelhi",
+    source: "Google Review",
+    rating: 5,
   },
   {
     quote:
-      "I've hired several pressure washing companies over the years, but none paid as much attention to detail as these guys. Our pool deck looks brand new.",
-    name: "Michael T.",
-    city: "Fort Lauderdale",
+      "Contacted Finesse thru Facebook. Got a timely response from Randy and a quote for a soft wash of my roof. Scheduling the job was quick and easy. Carlos showed up at my house on time. Carlos was polite and professional. He explained the process and shortly thereafter, he and his assistant Ethan got to work. Carlos and Ethan did a great job cleaning my roof. My wife and I were very pleased with the result. Our roof looks great!",
+    name: "P R.",
+    source: "Google Review",
+    rating: 5,
   },
   {
     quote:
-      "The team was punctual and respectful of our property. The soft wash on our home's exterior removed years of grime without damaging the paint.",
-    name: "David L.",
-    city: "Miami",
+      "Finesse Cleaning did an amazing job on our driveway, sidewalk, walkway, and stepping stones. They were efficient and professional. I also needed help taking out a hard water stain on our exterior wall. Not only were they knowledgeable to know what was needed, they were also prepared with the materials to do it the same day! So thankful for the team. I would definitely recommend them to friends and family.",
+    name: "Shauna B.",
+    source: "Google Review",
+    rating: 5,
   },
   {
     quote:
-      "Outstanding service from start to finish. They explained the process clearly, protected all my plants, and left my patio spotless. Will definitely use them again.",
-    name: "Jessica R.",
-    city: "Weston",
+      "Finesse Cleaning did a stupendous job pressure cleaning my front porch, roof, and outdoor patio! They were transparent with cost, did a thorough job with each section and showing me the before & after pictures; there was a section in my backyard I had assumed was always black before it was cleaned. I highly recommend their pressure cleaning service for residential properties and I will certainly call them back for repeat business!",
+    name: "Michelle C.",
+    source: "Google Review",
+    rating: 5,
   },
   {
     quote:
-      "Very fair pricing for the quality of work they deliver. They sealed our pavers and they look better than when they were first installed.",
-    name: "Robert M.",
-    city: "Pembroke Pines",
+      "So impressed with Carlos' meticulous care and expertise in cleaning everything around our house, including our roof driveway walls and patio. We like this service because they use a soft clean which doesn't kill all the plants after you have your roofs cleaned. Their prices are fair and they're work ethic is impressive. I would give them beyond a five star rating.",
+    name: "Maryann G.",
+    source: "Google Review",
+    rating: 5,
   },
   {
     quote:
-      "I called them for an emergency commercial cleanup before a grand opening. They came out the same day and did a flawless job. True professionals.",
-    name: "Amanda K.",
-    city: "Coral Springs",
+      "Carlos with Finesse cleaning knocked on my door this morning and asked if I wanted a quote to clean the tile roof and pressure wash the driveway. Both were in need of cleaning, the quote was quite reasonable and Carlos came back early this afternoon and did the job in which I'm greatly pleased. In cleaning the tile roof he pre treated it with a cleaner then \"soft washed\" the roof by applying light water pressure to wash and rinse the roof. Carlos made sure all the sides of the house were rinsed and cleaned and was very professional in his work ethic. Great job all around and plan on using Finesse cleaning in the future! Hats off to both Carlos and Randy!",
+    name: "Bryan J.",
+    source: "Google Review",
+    rating: 5,
+  },
+  {
+    quote:
+      "Best in town. House looks like new every time. Randy and his team are really great to work with, professional, quick and family friendly. I say that because, anyone who sees the house has to have them over soon too. Looks like new. Family and friends have made Randy their go to guy for pressure wash needs. Rates are reasonable and worth it. Great for Miami weather and keeping mold, mildew and pests away overall.",
+    name: "Grixuelle B.",
+    source: "Google Review",
+    rating: 5,
+  },
+  {
+    quote:
+      "I recently hired Finesse Cleaning to pressure clean my roof, and I couldn't be more impressed with the results! The before and after transformation is truly incredible—my roof looks brand new! The team was professional, efficient, and paid great attention to detail. They arrived on time, worked diligently, and ensured everything was spotless before they left. I highly recommend their services to anyone looking for top-notch pressure cleaning. Thank you for an outstanding job!",
+    name: "Bianca P.",
+    source: "Google Review",
+    rating: 5,
+  },
+  {
+    quote:
+      "Called Finesse Cleaning to handle my roof, driveway, walls, and front of my house. They came through and knocked it out. Everything looks clean and fresh. Fair price, professional service, and no complaints. If you need pressure washing done right, these are the guys to call. I'll definitely be using them again.",
+    name: "André M.",
+    source: "Google Review",
+    rating: 5,
+  },
+  {
+    quote:
+      "Hired Finesse Cleaning to power wash my house exterior, roof, patios, and walkways — and I couldn't be happier with the results. Everything looks brand new. The crew was professional, courteous, and clearly took pride in their work. You can tell the difference between a company that just goes through the motions and one that actually cares about the finished product. Finesse is the latter. Highly recommend!",
+    name: "Colin K.",
+    source: "Google Review",
+    rating: 5,
   },
 ];
 

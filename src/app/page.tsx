@@ -3,7 +3,7 @@ import Link from "next/link";
 import { services, testimonials, serviceAreas, phoneDisplay, phoneHref } from "@/lib/data";
 import GoogleReviewBadge from "@/components/GoogleReviewBadge";
 import WhyPickFinesse from "@/components/WhyPickFinesse";
-import TestimonialCard from "@/components/TestimonialCard";
+import TestimonialCarousel from "@/components/TestimonialCarousel";
 
 const whyPickUs = [
   {
@@ -220,15 +220,8 @@ export default function Home() {
               Read what your neighbors think about our work.
             </p>
           </div>
-          <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-3">
-            {testimonials.slice(0, 3).map((t) => (
-              <TestimonialCard
-                key={t.name}
-                quote={t.quote}
-                name={t.name}
-                city={t.city}
-              />
-            ))}
+          <div className="mt-12">
+            <TestimonialCarousel testimonials={testimonials} />
           </div>
         </div>
       </section>

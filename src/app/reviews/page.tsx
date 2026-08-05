@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
-import TestimonialCard from "@/components/TestimonialCard";
+import TestimonialCarousel from "@/components/TestimonialCarousel";
 import GoogleReviewBadge from "@/components/GoogleReviewBadge";
 import { testimonials } from "@/lib/data";
 
@@ -45,17 +45,7 @@ export default function ReviewsPage() {
 
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-6 pb-20 pt-16 lg:px-8">
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {testimonials.map((t) => (
-              <TestimonialCard
-                key={t.name}
-                quote={t.quote}
-                name={t.name}
-                city={t.city}
-                bordered
-              />
-            ))}
-          </div>
+          <TestimonialCarousel testimonials={testimonials} bordered />
         </div>
       </section>
 

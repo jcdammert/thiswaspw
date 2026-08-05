@@ -4,7 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import PageHero from "@/components/PageHero";
 import WhyPickFinesse from "@/components/WhyPickFinesse";
-import TestimonialCard from "@/components/TestimonialCard";
+import TestimonialCarousel from "@/components/TestimonialCarousel";
 import {
   serviceAreas,
   services,
@@ -160,19 +160,11 @@ export default async function ServiceAreaPage({
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="font-serif text-3xl font-semibold text-navy sm:text-4xl">
-              What {area.name} Customers Say
+              What Our Customers Say
             </h2>
           </div>
-          <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-3">
-            {testimonials.slice(0, 3).map((t) => (
-              <TestimonialCard
-                key={t.name}
-                quote={t.quote}
-                name={t.name}
-                city={t.city}
-                bordered
-              />
-            ))}
+          <div className="mt-12">
+            <TestimonialCarousel testimonials={testimonials} bordered />
           </div>
         </div>
       </section>
