@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import PageHero from "@/components/PageHero";
-import { cities, services, phoneDisplay, phoneHref, email } from "@/lib/data";
+import { services, phoneDisplay, phoneHref, email } from "@/lib/data";
 
 const timelines = [
   "As soon as possible",
@@ -55,7 +55,6 @@ export default function ContactPage() {
                 <input
                   required
                   name="name"
-                  placeholder="John Doe"
                   className="mt-1 w-full rounded-lg border border-navy/15 px-4 py-3 text-sm text-navy focus:border-brand focus:outline-none"
                 />
               </div>
@@ -68,7 +67,6 @@ export default function ContactPage() {
                     required
                     type="tel"
                     name="phone"
-                    placeholder="(555) 123-4567"
                     className="mt-1 w-full rounded-lg border border-navy/15 px-4 py-3 text-sm text-navy focus:border-brand focus:outline-none"
                   />
                 </div>
@@ -80,7 +78,6 @@ export default function ContactPage() {
                     required
                     type="email"
                     name="email"
-                    placeholder="john@example.com"
                     className="mt-1 w-full rounded-lg border border-navy/15 px-4 py-3 text-sm text-navy focus:border-brand focus:outline-none"
                   />
                 </div>
@@ -103,27 +100,19 @@ export default function ContactPage() {
                       {s.title}
                     </option>
                   ))}
+                  <option value="Other">Other</option>
                 </select>
               </div>
               <div>
                 <label className="text-xs font-semibold uppercase tracking-wide text-navy/60">
                   City *
                 </label>
-                <select
+                <input
                   required
                   name="city"
-                  defaultValue=""
+                  placeholder="Enter your city"
                   className="mt-1 w-full rounded-lg border border-navy/15 px-4 py-3 text-sm text-navy focus:border-brand focus:outline-none"
-                >
-                  <option value="" disabled>
-                    Select your city
-                  </option>
-                  {[...cities].sort().map((c) => (
-                    <option key={c} value={c}>
-                      {c}
-                    </option>
-                  ))}
-                </select>
+                />
               </div>
               <div>
                 <label className="text-xs font-semibold uppercase tracking-wide text-navy/60">
