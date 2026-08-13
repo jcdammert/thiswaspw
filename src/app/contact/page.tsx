@@ -48,15 +48,27 @@ export default function ContactPage() {
           <div className="lg:col-span-2">
             <h2 className="text-2xl font-bold text-navy">Get a Free Quote</h2>
             <form onSubmit={handleSubmit} className="mt-6 space-y-5">
-              <div>
-                <label className="text-xs font-semibold uppercase tracking-wide text-navy/60">
-                  Full Name *
-                </label>
-                <input
-                  required
-                  name="name"
-                  className="mt-1 w-full rounded-lg border border-navy/15 px-4 py-3 text-sm text-navy focus:border-brand focus:outline-none"
-                />
+              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                <div>
+                  <label className="text-xs font-semibold uppercase tracking-wide text-navy/60">
+                    First Name *
+                  </label>
+                  <input
+                    required
+                    name="firstName"
+                    className="mt-1 w-full rounded-lg border border-navy/15 px-4 py-3 text-sm text-navy focus:border-brand focus:outline-none"
+                  />
+                </div>
+                <div>
+                  <label className="text-xs font-semibold uppercase tracking-wide text-navy/60">
+                    Last Name *
+                  </label>
+                  <input
+                    required
+                    name="lastName"
+                    className="mt-1 w-full rounded-lg border border-navy/15 px-4 py-3 text-sm text-navy focus:border-brand focus:outline-none"
+                  />
+                </div>
               </div>
               <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                 <div>

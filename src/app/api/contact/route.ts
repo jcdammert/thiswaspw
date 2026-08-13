@@ -12,13 +12,13 @@ export async function POST(request: Request) {
     );
   }
 
-  const [firstName, ...rest] = String(data.name ?? "").trim().split(" ");
-  const lastName = rest.join(" ");
+  const firstName = String(data.firstName ?? "").trim();
+  const lastName = String(data.lastName ?? "").trim();
 
   const payload = {
-    firstName: firstName ?? "",
-    lastName: lastName ?? "",
-    full_name: data.name ?? "",
+    firstName,
+    lastName,
+    full_name: [firstName, lastName].filter(Boolean).join(" "),
     email: data.email ?? "",
     phone: data.phone ?? "",
     service_needed: data.service ?? "",
