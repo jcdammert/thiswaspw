@@ -5,9 +5,10 @@ import { notFound } from "next/navigation";
 import PageHero from "@/components/PageHero";
 import WhyPickFinesse from "@/components/WhyPickFinesse";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
+import MaintenancePlanCallout from "@/components/MaintenancePlanCallout";
 import {
   serviceAreas,
-  services,
+  gridServices,
   testimonials,
   phoneDisplay,
   phoneHref,
@@ -126,7 +127,7 @@ export default async function ServiceAreaPage({
             </h2>
           </div>
           <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => (
+            {gridServices.map((service) => (
               <Link
                 key={service.slug}
                 href={`/services/${service.slug}`}
@@ -151,6 +152,7 @@ export default async function ServiceAreaPage({
               </Link>
             ))}
           </div>
+          <MaintenancePlanCallout />
         </div>
       </section>
 

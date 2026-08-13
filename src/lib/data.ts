@@ -120,6 +120,16 @@ export const services: Service[] = [
   },
 ];
 
+// Maintenance Subscription Plans is a program, not a one-off cleaning
+// job like the rest — it gets its own callout instead of sitting in the
+// photo grid (16 items doesn't divide evenly into a 3-column grid anyway).
+export const gridServices = services.filter(
+  (s) => s.slug !== "maintenance-subscription-plans"
+);
+export const maintenancePlan = services.find(
+  (s) => s.slug === "maintenance-subscription-plans"
+)!;
+
 export type ServiceDetail = {
   overview: string;
   approach: string;

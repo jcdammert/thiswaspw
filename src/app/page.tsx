@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { services, testimonials, serviceAreas, phoneDisplay, phoneHref } from "@/lib/data";
+import { gridServices, testimonials, serviceAreas, phoneDisplay, phoneHref } from "@/lib/data";
 import GoogleReviewBadge from "@/components/GoogleReviewBadge";
 import WhyPickFinesse from "@/components/WhyPickFinesse";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
+import MaintenancePlanCallout from "@/components/MaintenancePlanCallout";
 
 const whyPickUs = [
   {
@@ -138,7 +139,7 @@ export default function Home() {
             </p>
           </div>
           <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => (
+            {gridServices.map((service) => (
               <div
                 key={service.slug}
                 className="group overflow-hidden rounded-2xl border border-navy/10 bg-white shadow-soft transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-soft-lg"
@@ -168,6 +169,7 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <MaintenancePlanCallout />
         </div>
       </section>
 
