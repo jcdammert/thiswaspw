@@ -5,7 +5,10 @@ import { notFound } from "next/navigation";
 import PageHero from "@/components/PageHero";
 import { ServiceIcon } from "@/components/icons";
 import WhyPickFinesse from "@/components/WhyPickFinesse";
+import JsonLd from "@/components/JsonLd";
 import { services, serviceDetails, phoneDisplay, phoneHref } from "@/lib/data";
+import { serviceSchema, breadcrumbSchema } from "@/lib/schema";
+import { pageMetadata } from "@/lib/seo";
 
 type Params = { slug: string };
 
@@ -21,10 +24,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const service = services.find((s) => s.slug === slug);
   if (!service) return {};
-  return {
+  return pageMetadata({
     title: `${service.title} | Finesse Cleaning`,
     description: `${service.description} Serving Palm Beach, Broward, and Miami-Dade counties. Free quotes.`,
-  };
+    path: `/services/${service.slug}`,
+  });
 }
 
 export default async function ServiceDetailPage({
@@ -42,6 +46,20 @@ export default async function ServiceDetailPage({
 
   return (
     <>
+      <JsonLd
+        data={serviceSchema({
+          title: service.title,
+          description: service.description,
+          slug: service.slug,
+        })}
+      />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Services", path: "/services" },
+          { name: service.title, path: `/services/${service.slug}` },
+        ])}
+      />
       <PageHero
         title={service.title}
         subtitle={service.description}

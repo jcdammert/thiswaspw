@@ -1,19 +1,29 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
+import JsonLd from "@/components/JsonLd";
 import { serviceAreas } from "@/lib/data";
+import { breadcrumbSchema } from "@/lib/schema";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Service Areas | Finesse Cleaning",
   description:
     "Finesse Cleaning provides pressure washing and soft washing across Palm Beach, Broward, and Miami-Dade counties. Find your city.",
-};
+  path: "/service-areas",
+});
 
 const counties = ["Broward County", "Miami-Dade County", "Palm Beach County"] as const;
 
 export default function ServiceAreasPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Service Areas", path: "/service-areas" },
+        ])}
+      />
       <PageHero
         title="Where We Work"
         subtitle="We serve Palm Beach, Broward, and Miami-Dade counties. Find your city below."

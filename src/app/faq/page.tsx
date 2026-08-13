@@ -1,15 +1,29 @@
-"use client";
-
+import type { Metadata } from "next";
 import Link from "next/link";
-import { useState } from "react";
 import PageHero from "@/components/PageHero";
+import FaqAccordion from "@/components/FaqAccordion";
+import JsonLd from "@/components/JsonLd";
 import { faqs } from "@/lib/data";
+import { faqPageSchema, breadcrumbSchema } from "@/lib/schema";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = pageMetadata({
+  title: "FAQ | Finesse Cleaning",
+  description:
+    "Answers to common questions about pressure washing, soft washing, pricing, safety, and scheduling with Finesse Cleaning in South Florida.",
+  path: "/faq",
+});
 
 export default function FaqPage() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
   return (
     <>
+      <JsonLd data={faqPageSchema(faqs)} />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "FAQ", path: "/faq" },
+        ])}
+      />
       <PageHero
         title="Frequently Asked Questions"
         subtitle="Everything you need to know about our services, process, and guarantees."
@@ -17,35 +31,7 @@ export default function FaqPage() {
 
       <section className="bg-white">
         <div className="mx-auto max-w-3xl px-6 py-20 lg:px-8">
-          <div className="divide-y divide-navy/10 border-y border-navy/10">
-            {faqs.map((faq, index) => {
-              const isOpen = openIndex === index;
-              return (
-                <div key={faq.question}>
-                  <button
-                    type="button"
-                    onClick={() => setOpenIndex(isOpen ? null : index)}
-                    className="flex w-full items-center justify-between gap-4 py-5 text-left"
-                  >
-                    <span className="font-semibold text-navy">
-                      {faq.question}
-                    </span>
-                    <span
-                      className={`shrink-0 text-brand transition-transform ${
-                        isOpen ? "rotate-45" : ""
-                      }`}
-                      aria-hidden
-                    >
-                      +
-                    </span>
-                  </button>
-                  {isOpen && (
-                    <p className="pb-5 text-sm text-navy/60">{faq.answer}</p>
-                  )}
-                </div>
-              );
-            })}
-          </div>
+          <FaqAccordion faqs={faqs} />
         </div>
       </section>
 

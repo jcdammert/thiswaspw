@@ -1,21 +1,28 @@
-"use client";
-
-import Image from "next/image";
+import type { Metadata } from "next";
 import Link from "next/link";
-import { useState } from "react";
 import PageHero from "@/components/PageHero";
+import GalleryFilter from "@/components/GalleryFilter";
+import JsonLd from "@/components/JsonLd";
 import { galleryFilters, galleryImages } from "@/lib/data";
+import { breadcrumbSchema } from "@/lib/schema";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Our Work | Finesse Cleaning",
+  description:
+    "See real before-and-after results from Finesse Cleaning's pressure washing and soft washing jobs across South Florida — roofs, driveways, pavers, commercial properties, and more.",
+  path: "/gallery",
+});
 
 export default function GalleryPage() {
-  const [active, setActive] = useState("All Work");
-
-  const filtered =
-    active === "All Work"
-      ? galleryImages
-      : galleryImages.filter((img) => img.label === active);
-
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Gallery", path: "/gallery" },
+        ])}
+      />
       <PageHero
         title="Our Work"
         subtitle="See what our pressure washing can do. The results speak for themselves."
@@ -23,44 +30,7 @@ export default function GalleryPage() {
 
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-3">
-            {galleryFilters.map((filter) => (
-              <button
-                key={filter}
-                type="button"
-                onClick={() => setActive(filter)}
-                className={`rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-wide transition-colors ${
-                  active === filter
-                    ? "bg-brand text-white"
-                    : "border border-navy/10 text-navy/60 hover:border-brand/40"
-                }`}
-              >
-                {filter}
-              </button>
-            ))}
-          </div>
-
-          <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {filtered.map((img, i) => (
-              <div
-                key={`${img.src}-${i}`}
-                className="relative aspect-[4/3] overflow-hidden rounded-2xl"
-              >
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy/80 to-transparent p-4">
-                  <p className="text-sm font-semibold text-white">
-                    {img.label}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <GalleryFilter filters={galleryFilters} images={galleryImages} />
         </div>
       </section>
 

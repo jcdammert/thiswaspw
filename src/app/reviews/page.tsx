@@ -3,13 +3,17 @@ import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 import GoogleReviewBadge from "@/components/GoogleReviewBadge";
+import JsonLd from "@/components/JsonLd";
 import { testimonials } from "@/lib/data";
+import { breadcrumbSchema } from "@/lib/schema";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Reviews | Finesse Cleaning",
   description:
     "Read what property owners across South Florida think about our work.",
-};
+  path: "/reviews",
+});
 
 const stats = [
   { value: "3000+", label: "Jobs Completed" },
@@ -20,6 +24,12 @@ const stats = [
 export default function ReviewsPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Reviews", path: "/reviews" },
+        ])}
+      />
       <PageHero
         title="What Our Customers Say"
         subtitle="Read what property owners across South Florida think about our work."

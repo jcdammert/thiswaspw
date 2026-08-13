@@ -2,11 +2,15 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbSchema } from "@/lib/schema";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "About | Finesse Cleaning",
   description: "South Florida's trusted pressure washing experts since 2014.",
-};
+  path: "/about",
+});
 
 const values = [
   {
@@ -36,6 +40,12 @@ const stats = [
 export default function AboutPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "About", path: "/about" },
+        ])}
+      />
       <PageHero
         title="About Finesse Cleaning"
         subtitle="South Florida's trusted pressure washing experts since 2014."

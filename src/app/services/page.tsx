@@ -4,13 +4,17 @@ import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import WhyPickFinesse from "@/components/WhyPickFinesse";
 import MaintenancePlanCallout from "@/components/MaintenancePlanCallout";
+import JsonLd from "@/components/JsonLd";
 import { gridServices } from "@/lib/data";
+import { breadcrumbSchema } from "@/lib/schema";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Services | Finesse Cleaning",
   description:
     "We clean all exterior surfaces safely and effectively. We handle everything from dirty driveways to delicate roofs.",
-};
+  path: "/services",
+});
 
 const whyPickUs = [
   {
@@ -32,6 +36,12 @@ const whyPickUs = [
 export default function ServicesPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Services", path: "/services" },
+        ])}
+      />
       <PageHero
         title="Our Services"
         subtitle="We clean all exterior surfaces safely and effectively. We handle everything from dirty driveways to delicate roofs."

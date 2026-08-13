@@ -6,6 +6,7 @@ import PageHero from "@/components/PageHero";
 import WhyPickFinesse from "@/components/WhyPickFinesse";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 import MaintenancePlanCallout from "@/components/MaintenancePlanCallout";
+import JsonLd from "@/components/JsonLd";
 import {
   serviceAreas,
   gridServices,
@@ -14,6 +15,8 @@ import {
   phoneHref,
   cityContent,
 } from "@/lib/data";
+import { breadcrumbSchema } from "@/lib/schema";
+import { pageMetadata } from "@/lib/seo";
 
 const whyPickUs = [
   {
@@ -48,12 +51,13 @@ export async function generateMetadata({
   const area = serviceAreas.find((a) => a.slug === slug);
   if (!area) return {};
   const content = cityContent[area.name];
-  return {
+  return pageMetadata({
     title: `Pressure Washing in ${area.name}, FL | Finesse Cleaning`,
     description: content
       ? `${content.metaHook} Roof soft washing, driveway cleaning, house washing, and more. Free quotes.`
       : `Finesse Cleaning provides premium pressure washing and soft washing in ${area.name}, FL. Roof washing, driveway cleaning, house washing, and more. Free quotes.`,
-  };
+    path: `/service-areas/${area.slug}`,
+  });
 }
 
 export default async function ServiceAreaPage({
@@ -72,6 +76,13 @@ export default async function ServiceAreaPage({
 
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Service Areas", path: "/service-areas" },
+          { name: area.name, path: `/service-areas/${area.slug}` },
+        ])}
+      />
       <PageHero
         title={`Pressure Washing in ${area.name}, FL`}
         subtitle={`Premium pressure washing and soft washing for homes and businesses throughout ${area.name} and ${area.county}.`}
