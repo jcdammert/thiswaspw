@@ -18,8 +18,9 @@ export default function ContactPage() {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const form = e.currentTarget;
     setStatus("submitting");
-    const formData = new FormData(e.currentTarget);
+    const formData = new FormData(form);
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -28,8 +29,9 @@ export default function ContactPage() {
       });
       if (!res.ok) throw new Error("Request failed");
       setStatus("sent");
-      e.currentTarget.reset();
-    } catch {
+      form.reset();
+    } catch (err) {
+      console.error("Contact form submission failed:", err);
       setStatus("error");
     }
   }
