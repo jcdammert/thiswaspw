@@ -1,9 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { gridServices, testimonials, serviceAreas, phoneDisplay, phoneHref } from "@/lib/data";
+import { gridServices, serviceAreas, phoneDisplay, phoneHref } from "@/lib/data";
 import GoogleReviewBadge from "@/components/GoogleReviewBadge";
 import WhyPickFinesse from "@/components/WhyPickFinesse";
-import TestimonialCarousel from "@/components/TestimonialCarousel";
 import MaintenancePlanCallout from "@/components/MaintenancePlanCallout";
 import ReviewWidget from "@/components/ReviewWidget";
 
@@ -211,23 +210,6 @@ export default function Home() {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="bg-navy/5">
-        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="font-serif text-3xl font-semibold text-navy sm:text-4xl">
-              What Our Customers Say
-            </h2>
-            <p className="mt-4 text-navy/60">
-              Read what your neighbors think about our work.
-            </p>
-          </div>
-          <div className="mt-12">
-            <TestimonialCarousel testimonials={testimonials} />
           </div>
         </div>
       </section>
