@@ -5,6 +5,7 @@ import GoogleReviewBadge from "@/components/GoogleReviewBadge";
 import WhyPickFinesse from "@/components/WhyPickFinesse";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 import MaintenancePlanCallout from "@/components/MaintenancePlanCallout";
+import ReviewWidget from "@/components/ReviewWidget";
 
 const whyPickUs = [
   {
@@ -174,6 +175,8 @@ export default function Home() {
       </section>
 
       {/* Why Pick Finesse */}
+      <ReviewWidget />
+
       <WhyPickFinesse
         items={whyPickUs}
         subtitle="We take pride in our work. We protect your property and make sure you are happy with the results."
