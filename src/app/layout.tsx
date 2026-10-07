@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
+import FloatingReviewBadge from "@/components/FloatingReviewBadge";
 import { localBusinessSchema, siteUrl } from "@/lib/schema";
 
 const fraunces = Fraunces({
@@ -62,6 +63,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <FloatingReviewBadge />
       </body>
     </html>
   );
