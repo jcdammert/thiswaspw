@@ -17,7 +17,7 @@ export const business = {
   googleMapsUrl:
     "https://www.google.com/maps/place/Finesse+Cleaning/@26.0517423,-80.1398068,17z/data=!3m1!4b1!4m6!3m5!1s0x4be2ba9adeaeca0f:0x18295f8a79b848d6!8m2!3d26.0517423!4d-80.1398068",
   ratingValue: "5.0",
-  reviewCount: "146",
+  reviewCount: "160",
 };
 
 export function localBusinessSchema() {

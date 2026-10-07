@@ -70,7 +70,7 @@ export default function GoogleReviewBadge({
         <span
           className={`text-xs ${isDark ? "text-white/60" : "text-navy/50"}`}
         >
-          146 Google Reviews
+          160+ Google Reviews
         </span>
       </span>
     </a>
