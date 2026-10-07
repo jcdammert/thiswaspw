@@ -174,9 +174,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Pick Finesse */}
+      {/* Reviews widget */}
       <ReviewWidget />
 
+      {/* Why Pick Finesse */}
       <WhyPickFinesse
         items={whyPickUs}
         subtitle="We take pride in our work. We protect your property and make sure you are happy with the results."
