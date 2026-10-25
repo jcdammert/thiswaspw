@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -62,6 +63,11 @@ export default function RootLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <Script
+          src="https://links.scalemintsolutions.com/js/external-tracking.js"
+          data-tracking-id="tk_a1ab36f3879d4564b053b3500a2f223c"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
